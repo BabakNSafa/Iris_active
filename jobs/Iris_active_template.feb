@@ -20,7 +20,7 @@
 		</solver>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
-			<dtmax>0.1</dtmax>
+			<dtmax lc="3">1</dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
@@ -977,6 +977,13 @@
 				<point>1,1</point>
 			</points>
 		</load_controller>
+		<load_controller id="3" type="loadcurve">
+			<interpolate>STEP</interpolate>
+			<points>
+				<point>0,10</point>
+				<point>15,1</point>
+			</points>
+		</load_controller>		
 	</LoadData>
 	<Output>
 		<plotfile type="febio">
@@ -985,6 +992,7 @@
 			<var type="relative volume"/>
 			<var type="stress"/>
 			<var type="parameter['fem.material[0].solid[1].T0']=T_sphincter"/>
+			<var type="parameter['fem.material[0].solid[2].T0']=T_dialator"/>		
 		</plotfile>
 		<logfile>
 			<element_data data="x;y;z;sx;sy;sz;Ex;Ey;Ez"/>

@@ -68,7 +68,7 @@ for i=1:length(T_Diallator)
     iris.febio_spec.LoadData.load_controller{1, 2}.points.point{i}.Text ...
         = sprintf ('%.20f,%.20f',[time_resample(i),T_Diallator(i)]);
 end
-%% Plot and log file setup (optional & done through the template)
+%% Plot and log file setup (optional & d
 % <var type=?parameter[?fem.material[0].E?]=E?/>
 %% Write file
 uid = sprintf('%.0f',10^6*cputime);
