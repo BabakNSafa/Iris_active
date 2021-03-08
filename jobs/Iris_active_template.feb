@@ -56,7 +56,7 @@
 		</material>
 	</Material>
 	<Mesh>
-		<Nodes name="Object7">
+		<Nodes name="Object01">
 			<node id="1">3,0,0</node>
 			<node id="2">3.3,0,0</node>
 			<node id="3">3.6,0,0</node>
@@ -402,7 +402,7 @@
 			<elem id="99">   108,   109,   120,   119,   229,   230,   241,   240</elem>
 			<elem id="100">   109,   110,   121,   120,   230,   231,   242,   241</elem>
 		</Elements>
-		<Surface name="FixedDisplacement2">
+		<Surface name="FixedDisplacement1">
 			<quad4 id="1">    11,    22,   143,   132</quad4>
 			<quad4 id="2">    22,    33,   154,   143</quad4>
 			<quad4 id="3">    33,    44,   165,   154</quad4>
@@ -427,18 +427,18 @@
 			<quad4 id="10">    10,    11,   132,   131</quad4>
 		</Surface>
 		<Surface name="FixedDisplacement4">
-			<quad4 id="1">   111,   112,   233,   232</quad4>
-			<quad4 id="2">   112,   113,   234,   233</quad4>
-			<quad4 id="3">   113,   114,   235,   234</quad4>
-			<quad4 id="4">   114,   115,   236,   235</quad4>
-			<quad4 id="5">   115,   116,   237,   236</quad4>
-			<quad4 id="6">   116,   117,   238,   237</quad4>
-			<quad4 id="7">   117,   118,   239,   238</quad4>
-			<quad4 id="8">   118,   119,   240,   239</quad4>
-			<quad4 id="9">   119,   120,   241,   240</quad4>
-			<quad4 id="10">   120,   121,   242,   241</quad4>
+			<quad4 id="1">   112,   111,   232,   233</quad4>
+			<quad4 id="2">   113,   112,   233,   234</quad4>
+			<quad4 id="3">   114,   113,   234,   235</quad4>
+			<quad4 id="4">   115,   114,   235,   236</quad4>
+			<quad4 id="5">   116,   115,   236,   237</quad4>
+			<quad4 id="6">   117,   116,   237,   238</quad4>
+			<quad4 id="7">   118,   117,   238,   239</quad4>
+			<quad4 id="8">   119,   118,   239,   240</quad4>
+			<quad4 id="9">   120,   119,   240,   241</quad4>
+			<quad4 id="10">   121,   120,   241,   242</quad4>
 		</Surface>
-		<ElementSet name="FixedDisplacement1">
+		<ElementSet name="FixedDisplacement2">
 			<e id="1"/>
 			<e id="2"/>
 			<e id="3"/>
@@ -827,44 +827,44 @@
 				<d>-0.809017,0.587785,0</d>
 			</e>
 			<e lid="71">
-				<a>0.453991,0.891007,0</a>
-				<d>-0.891007,0.453991,0</d>
+				<a>0.453991,0.891006,0</a>
+				<d>-0.891006,0.453991,0</d>
 			</e>
 			<e lid="72">
-				<a>0.453991,0.891007,0</a>
-				<d>-0.891007,0.453991,0</d>
+				<a>0.453991,0.891006,0</a>
+				<d>-0.891006,0.453991,0</d>
 			</e>
 			<e lid="73">
-				<a>0.453991,0.891007,0</a>
-				<d>-0.891007,0.453991,0</d>
+				<a>0.453991,0.891006,0</a>
+				<d>-0.891006,0.453991,0</d>
 			</e>
 			<e lid="74">
-				<a>0.453991,0.891007,0</a>
-				<d>-0.891007,0.453991,0</d>
+				<a>0.453991,0.891006,0</a>
+				<d>-0.891006,0.453991,0</d>
 			</e>
 			<e lid="75">
-				<a>0.453991,0.891007,0</a>
-				<d>-0.891007,0.453991,0</d>
+				<a>0.453991,0.891006,0</a>
+				<d>-0.891006,0.453991,0</d>
 			</e>
 			<e lid="76">
-				<a>0.453991,0.891007,0</a>
-				<d>-0.891007,0.453991,0</d>
+				<a>0.453991,0.891006,0</a>
+				<d>-0.891006,0.453991,0</d>
 			</e>
 			<e lid="77">
-				<a>0.453991,0.891007,0</a>
-				<d>-0.891007,0.453991,0</d>
+				<a>0.453991,0.891006,0</a>
+				<d>-0.891006,0.453991,0</d>
 			</e>
 			<e lid="78">
-				<a>0.453991,0.891007,0</a>
-				<d>-0.891007,0.453991,0</d>
+				<a>0.453991,0.891006,0</a>
+				<d>-0.891006,0.453991,0</d>
 			</e>
 			<e lid="79">
-				<a>0.453991,0.891007,0</a>
-				<d>-0.891007,0.453991,0</d>
+				<a>0.453991,0.891006,0</a>
+				<d>-0.891006,0.453991,0</d>
 			</e>
 			<e lid="80">
-				<a>0.453991,0.891007,0</a>
-				<d>-0.891007,0.453991,0</d>
+				<a>0.453991,0.891006,0</a>
+				<d>-0.891006,0.453991,0</d>
 			</e>
 			<e lid="81">
 				<a>0.309017,0.951057,0</a>
@@ -949,11 +949,11 @@
 		</ElementData>
 	</MeshData>
 	<Boundary>
-		<bc name="FixedDisplacement1" type="fix" node_set="@elem_set:FixedDisplacement1">
-			<dofs>z</dofs>
+		<bc name="FixedDisplacement1" type="fix" node_set="@surface:FixedDisplacement1">
+			<dofs>x,y,z</dofs>
 		</bc>
-		<bc name="FixedDisplacement2" type="fix" node_set="@surface:FixedDisplacement2">
-			<dofs>x,y</dofs>
+		<bc name="FixedDisplacement2" type="fix" node_set="@elem_set:FixedDisplacement2">
+			<dofs>z</dofs>
 		</bc>
 		<bc name="FixedDisplacement3" type="fix" node_set="@surface:FixedDisplacement3">
 			<dofs>y</dofs>
@@ -964,7 +964,7 @@
 	</Boundary>
 	<LoadData>
 		<load_controller id="1" type="loadcurve">
-			<interpolate>SMOOTH</interpolate>
+			<interpolate>Linear</interpolate>
 			<points>
 				<point>0,0</point>
 				<point>1,1</point>

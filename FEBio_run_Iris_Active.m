@@ -38,13 +38,13 @@ while rho_flag
     end
 end
 %% Control
-iris.febio_spec.Control.time_steps=sprintf('%d',10*max(time_resample));
-iris.febio_spec.Control.step_size=sprintf('%d',.1);
-iris.febio_spec.Control.time_stepper.dtmax=sprintf('%d',.1);
-iris.febio_spec.Control.time_stepper.dtmin=sprintf('%f',.03);
+iris.febio_spec.Control.time_steps=sprintf('%d',max(time_resample));
+iris.febio_spec.Control.step_size=sprintf('%d',1);
+iris.febio_spec.Control.time_stepper.dtmax=sprintf('%d',10);
+iris.febio_spec.Control.time_stepper.dtmin=sprintf('%f',.3);
 %% Material: Iris material
 iris.febio_spec.Material.material.solid{1, 1}.E.Text = '1';
-iris.febio_spec.Material.material.solid{1, 1}.v.Text = '.3';
+iris.febio_spec.Material.material.solid{1, 1}.v.Text = '.45';
 
 iris.febio_spec.Material.material.solid{1, 2}.T0.Attributes.type = 'math';
 % iris.febio_spec.Material.material.solid{1, 2}.T0.Text = '(1-H((X^2+Y^2)^.5-4))';
