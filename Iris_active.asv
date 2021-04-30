@@ -14,32 +14,35 @@ fprintf('%s\n',datetime)
 raw = csvread('Iris_seg_summary.csv');
 
 time = raw(:,1);
+time(1) = 0; %make sure the initial point starts at time zero, this offsetgting does impact the fit, because this is duing the no-deformation phase
 r_p = raw(:,2);
 % r_s = raw(:,3);
 e_r = r_p/r_p(1)-1;
 
 %resample time to not overfit the region where there is not light
-fprintf('Find the (middle index - 1) of the time vector...\n')
-mid_index = ceil(length(time)/2)-1;
-fprintf('Down sample the initial idle time of the pupil (1:10), interp1, and moving average (3)...\n')
-time_resampled = [time(1:10:mid_index);time((mid_index):end)];  
+fprintf('Find the (middle index - 3) of the time vector...\n')
+mid_index = ceil(length(time)/2)-3;
+fprintf('Downsample the initial idle time of the pupil (1:10), interp1, and moving average (3)...\n')
+time_resampled = [linspace(time(1),time(mid_index),5)';
+                  linspace(time(mid_index),time(end),15)'];
+time_resampled = unique(time_resampled);
 
 %linear interpolation and moving average with three 3 neighboring points
 e_r_resampled = interp1(time,e_r,time_resampled,'linear','extrap');
-e_r_resampled = movmean(e_r_resampled,3); 
-% 
-% figure
-% hold on
-% plot(time,e_r,'o')
-% plot(time_resampled,e_r_resampled,'-*r')
-
+ 
+figure
+hold on
+plot(time,e_r,'o')
+plot(time_resampled,e_r_resampled,'-*r')
+%% Define cost function
 n = length(time_resampled);
 cleanup = true;
 fun_par = @(x) [time_resampled, x(1:n,1), x(n+1)*ones(size(time_resampled))];
 fun = @(x) sqrt(sum((FEBio_run_Iris_Active(fun_par(x),cleanup)-e_r_resampled).^2)/length(e_r_resampled));
-%% test function
-T_s_test = ones(size(time_resampled));
-T_d_test = ones(size(time_resampled));
+%% Test function
+T_s_test = zeros(size(time_resampled));
+T_s_test((time_resampled>15)&(time_resampled<20))=.1;
+T_d_test = zeros(size(time_resampled));
 
 T_test = [time_resampled,T_s_test,T_d_test];
 cleanup = true;
@@ -50,9 +53,8 @@ if isempty(test1)||isempty(test2)
 end
 %% Curvefitting
 options = optimoptions('fmincon','Display','iter',...
-            'UseParallel',true,...
-            'Objectivelimit',1e-3,...
-            'MaxFunctionEvaluations',10000);
+            'UseParallel',false,...
+            'Objectivelimit',1e-3);
 
 tic;
 fprintf('Optimization started ...\n')

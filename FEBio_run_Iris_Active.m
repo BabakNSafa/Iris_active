@@ -44,11 +44,30 @@ while rho_flag
     end
 end
 %% Control
-iris.febio_spec.Control.time_steps=sprintf('%d',max(time_resample));
-iris.febio_spec.Control.step_size=sprintf('%d',1);
+iris.febio_spec.Control.time_steps=sprintf('%d',max(time_resample)*10);
+iris.febio_spec.Control.step_size=sprintf('%d',.1);
 %% Material: Iris material
-iris.febio_spec.Material.material.solid{1, 1}.E.Text = '1';
-iris.febio_spec.Material.material.solid{1, 1}.v.Text = '.45';
+error('The material parameters are assigned and not changing with optimization, FIX IT!')
+iris.febio_spec.Material.material.solid{1, 1}.kinetics = '1';
+iris.febio_spec.Material.material.solid{1, 1}.trigger = '0';
+
+iris.febio_spec.Material.material.solid{1, 1} = ...
+    rmfield(iris.febio_spec.Material.material.solid{1, 1},'E');
+iris.febio_spec.Material.material.solid{1, 1} = ...
+    rmfield(iris.febio_spec.Material.material.solid{1, 1},'v');
+
+iris.febio_spec.Material.material.solid{1, 1}.Attributes.type='reactive viscoelastic';
+iris.febio_spec.Material.material.solid{1, 1}.elastic.Attributes.type='neo-Hookean';
+iris.febio_spec.Material.material.solid{1, 1}.elastic.E.Text = '.01';
+iris.febio_spec.Material.material.solid{1, 1}.elastic.v.Text = '.49';
+
+iris.febio_spec.Material.material.solid{1, 1}.bond.Attributes.type='neo-Hookean';
+iris.febio_spec.Material.material.solid{1, 1}.bond.E.Text = '.01';
+iris.febio_spec.Material.material.solid{1, 1}.bond.v.Text = '.49';
+
+iris.febio_spec.Material.material.solid{1, 1}.relaxation.Attributes.type='relaxation-exponential';
+iris.febio_spec.Material.material.solid{1, 1}.relaxation.tau.Text='.5';
+
 
 iris.febio_spec.Material.material.solid{1, 2}.T0.Attributes.type = 'math';
 % iris.febio_spec.Material.material.solid{1, 2}.T0.Text = '(1-H((X^2+Y^2)^.5-4))';
@@ -88,7 +107,7 @@ movefile([file_name,'.xml'],uid_feb);
 % if isempty(flag_FEBio_path)
 %     setenv('PATH',[current_path,FEBio_Path]);
 % end
-system(['febio3 -i ',uid_feb,' -silent -nosplash']);
+system(['febio3 -i ',uid_feb,' -nosplash']);
 %% Visualize the displacement
 %% Read output
 file=fopen(uid_log);

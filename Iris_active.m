@@ -40,16 +40,17 @@ cleanup = true;
 fun_par = @(x) [time_resampled, x(1:n,1), x(n+1)*ones(size(time_resampled))];
 fun = @(x) sqrt(sum((FEBio_run_Iris_Active(fun_par(x),cleanup)-e_r_resampled).^2)/length(e_r_resampled));
 %% Test function
-% T_s_test = ones(size(time_resampled));
-% T_d_test = ones(size(time_resampled));
-% 
-% T_test = [time_resampled,T_s_test,T_d_test];
-% cleanup = true;
-% test1 = FEBio_run_Iris_Active(fun_par(T_test),cleanup);
-% test2 = fun(T_test);
-% if isempty(test1)||isempty(test2)
-%     error('FEBio test failed!')
-% end
+T_s_test = zeros(size(time_resampled));
+T_s_test((time_resampled>15)&(time_resampled<20))=.1;
+T_d_test = zeros(size(time_resampled));
+
+T_test = [T_s_test,T_d_test];
+cleanup = true;
+test1 = FEBio_run_Iris_Active(fun_par(T_test),cleanup);
+test2 = fun(T_test);
+if isempty(test1)||isempty(test2)
+    error('FEBio test failed!')
+end
 %% Curvefitting
 options = optimoptions('fmincon','Display','iter',...
             'UseParallel',false,...
