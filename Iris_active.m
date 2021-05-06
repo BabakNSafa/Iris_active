@@ -37,17 +37,17 @@ plot(time_resampled,e_r_resampled,'-*r')
 %% Define cost function
 n = length(time_resampled);
 cleanup = true;
-fun_par = @(x) [time_resampled, x(1:n,1), x(n+1)*ones(size(time_resampled))];
-fun = @(x) sqrt(sum((FEBio_run_Iris_Active(fun_par(x),cleanup)-e_r_resampled).^2)/length(e_r_resampled));
+fun_par = @(x) [1, x , 0]; %set the matrix modulus to one and dialtor traction to zero
+fun = @(x) sqrt(sum((FEBio_run_Iris_Active(fun_par(x),time_resampled,cleanup)-e_r_resampled).^2)/length(e_r_resampled));
 %% Test function
-T_s_test = zeros(size(time_resampled));
-T_s_test((time_resampled>15)&(time_resampled<20))=.1;
-T_d_test = zeros(size(time_resampled));
+v_test = 0.2;
+tau_test = 3; 
+T_s_test = 16; %in units of E
 
-T_test = [T_s_test,T_d_test];
-cleanup = true;
-test1 = FEBio_run_Iris_Active(fun_par(T_test),cleanup);
-test2 = fun(T_test);
+x_test = [v_test, tau_test, T_s_test];
+cleanup = false;
+test1 = FEBio_run_Iris_Active(fun_par(x_test),time_resampled,cleanup);
+test2 = fun(fun_par(x_test));
 if isempty(test1)||isempty(test2)
     error('FEBio test failed!')
 end
@@ -58,15 +58,17 @@ options = optimoptions('fmincon','Display','iter',...
 
 tic;
 fprintf('Optimization started ...\n')
-x_fit = fmincon(fun,ones(n+1,1),[],[],[],[],...
-    ones(n+1,1)-ones(n+1,1),10*ones(n+1,1),[],options);
+lb = [0,0,0];
+ub = [.45,10,100];
+x_fit = fmincon(fun,x_test,[],[],[],[],...
+        lb,ub,[],options);
 t_elapsed = toc;
 fprintf('Optimization ended in %.3f hours\n',t_elapsed/3600)
 %% Evaluate the fit response
 cleanup = false;
-e_r_fit = FEBio_run_Iris_Active(fun_par(x_fit),cleanup);
-
-T_fit = fun_par(x_fit);
+e_r_fit = FEBio_run_Iris_Active(fun_par(x_test),time_resampled,cleanup);
+error('NEEDS MORE WORK!!')
+T_fit = fun_par(fun_par(x_test));
 T_s_fit = T_fit(:,2);
 T_d_fit = T_fit(:,3);
 
