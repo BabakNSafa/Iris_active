@@ -41,11 +41,11 @@
             <trigger>0</trigger>
             <elastic type="neo-Hookean">
                <E>1.00000000000000000000</E>
-               <v>0.20000000000000001110</v>
+               <v>0.00000000000000000000</v>
             </elastic>
             <bond type="neo-Hookean">
                <E>1.00000000000000000000</E>
-               <v>0.20000000000000001110</v>
+               <v>0.00000000000000000000</v>
             </bond>
             <relaxation type="relaxation-exponential">
                <tau>3.00000000000000000000</tau>
@@ -780,6 +780,208 @@
          <quad4 id="19"> 209, 220, 451, 440</quad4>
          <quad4 id="20"> 220, 231, 462, 451</quad4>
       </Surface>
+      <ElementSet name="FixedDisplacement4">
+         <e id="1"/>
+         <e id="2"/>
+         <e id="3"/>
+         <e id="4"/>
+         <e id="5"/>
+         <e id="6"/>
+         <e id="7"/>
+         <e id="8"/>
+         <e id="9"/>
+         <e id="10"/>
+         <e id="11"/>
+         <e id="12"/>
+         <e id="13"/>
+         <e id="14"/>
+         <e id="15"/>
+         <e id="16"/>
+         <e id="17"/>
+         <e id="18"/>
+         <e id="19"/>
+         <e id="20"/>
+         <e id="21"/>
+         <e id="22"/>
+         <e id="23"/>
+         <e id="24"/>
+         <e id="25"/>
+         <e id="26"/>
+         <e id="27"/>
+         <e id="28"/>
+         <e id="29"/>
+         <e id="30"/>
+         <e id="31"/>
+         <e id="32"/>
+         <e id="33"/>
+         <e id="34"/>
+         <e id="35"/>
+         <e id="36"/>
+         <e id="37"/>
+         <e id="38"/>
+         <e id="39"/>
+         <e id="40"/>
+         <e id="41"/>
+         <e id="42"/>
+         <e id="43"/>
+         <e id="44"/>
+         <e id="45"/>
+         <e id="46"/>
+         <e id="47"/>
+         <e id="48"/>
+         <e id="49"/>
+         <e id="50"/>
+         <e id="51"/>
+         <e id="52"/>
+         <e id="53"/>
+         <e id="54"/>
+         <e id="55"/>
+         <e id="56"/>
+         <e id="57"/>
+         <e id="58"/>
+         <e id="59"/>
+         <e id="60"/>
+         <e id="61"/>
+         <e id="62"/>
+         <e id="63"/>
+         <e id="64"/>
+         <e id="65"/>
+         <e id="66"/>
+         <e id="67"/>
+         <e id="68"/>
+         <e id="69"/>
+         <e id="70"/>
+         <e id="71"/>
+         <e id="72"/>
+         <e id="73"/>
+         <e id="74"/>
+         <e id="75"/>
+         <e id="76"/>
+         <e id="77"/>
+         <e id="78"/>
+         <e id="79"/>
+         <e id="80"/>
+         <e id="81"/>
+         <e id="82"/>
+         <e id="83"/>
+         <e id="84"/>
+         <e id="85"/>
+         <e id="86"/>
+         <e id="87"/>
+         <e id="88"/>
+         <e id="89"/>
+         <e id="90"/>
+         <e id="91"/>
+         <e id="92"/>
+         <e id="93"/>
+         <e id="94"/>
+         <e id="95"/>
+         <e id="96"/>
+         <e id="97"/>
+         <e id="98"/>
+         <e id="99"/>
+         <e id="100"/>
+         <e id="101"/>
+         <e id="102"/>
+         <e id="103"/>
+         <e id="104"/>
+         <e id="105"/>
+         <e id="106"/>
+         <e id="107"/>
+         <e id="108"/>
+         <e id="109"/>
+         <e id="110"/>
+         <e id="111"/>
+         <e id="112"/>
+         <e id="113"/>
+         <e id="114"/>
+         <e id="115"/>
+         <e id="116"/>
+         <e id="117"/>
+         <e id="118"/>
+         <e id="119"/>
+         <e id="120"/>
+         <e id="121"/>
+         <e id="122"/>
+         <e id="123"/>
+         <e id="124"/>
+         <e id="125"/>
+         <e id="126"/>
+         <e id="127"/>
+         <e id="128"/>
+         <e id="129"/>
+         <e id="130"/>
+         <e id="131"/>
+         <e id="132"/>
+         <e id="133"/>
+         <e id="134"/>
+         <e id="135"/>
+         <e id="136"/>
+         <e id="137"/>
+         <e id="138"/>
+         <e id="139"/>
+         <e id="140"/>
+         <e id="141"/>
+         <e id="142"/>
+         <e id="143"/>
+         <e id="144"/>
+         <e id="145"/>
+         <e id="146"/>
+         <e id="147"/>
+         <e id="148"/>
+         <e id="149"/>
+         <e id="150"/>
+         <e id="151"/>
+         <e id="152"/>
+         <e id="153"/>
+         <e id="154"/>
+         <e id="155"/>
+         <e id="156"/>
+         <e id="157"/>
+         <e id="158"/>
+         <e id="159"/>
+         <e id="160"/>
+         <e id="161"/>
+         <e id="162"/>
+         <e id="163"/>
+         <e id="164"/>
+         <e id="165"/>
+         <e id="166"/>
+         <e id="167"/>
+         <e id="168"/>
+         <e id="169"/>
+         <e id="170"/>
+         <e id="171"/>
+         <e id="172"/>
+         <e id="173"/>
+         <e id="174"/>
+         <e id="175"/>
+         <e id="176"/>
+         <e id="177"/>
+         <e id="178"/>
+         <e id="179"/>
+         <e id="180"/>
+         <e id="181"/>
+         <e id="182"/>
+         <e id="183"/>
+         <e id="184"/>
+         <e id="185"/>
+         <e id="186"/>
+         <e id="187"/>
+         <e id="188"/>
+         <e id="189"/>
+         <e id="190"/>
+         <e id="191"/>
+         <e id="192"/>
+         <e id="193"/>
+         <e id="194"/>
+         <e id="195"/>
+         <e id="196"/>
+         <e id="197"/>
+         <e id="198"/>
+         <e id="199"/>
+         <e id="200"/>
+      </ElementSet>
    </Mesh>
    <MeshDomains>
       <SolidDomain mat="Material1" name="Part3"/>
@@ -1598,6 +1800,9 @@
       <bc name="FixedDisplacement3" node_set="@surface:FixedDisplacement3" type="fix">
          <dofs>x,y,z</dofs>
       </bc>
+      <bc name="FixedDisplacement4" node_set="@elem_set:FixedDisplacement4" type="fix">
+         <dofs>z</dofs>
+      </bc>
    </Boundary>
    <LoadData>
       <load_controller id="1" type="loadcurve">
@@ -1605,7 +1810,7 @@
          <points>
             <point>0,0</point>
             <point>15,5</point>
-            <point>30,1</point>
+            <point>30,0.1</point>
          </points>
       </load_controller>
       <load_controller id="2" type="loadcurve">

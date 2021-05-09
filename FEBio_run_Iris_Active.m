@@ -1,16 +1,21 @@
-function [e_r_pupil,varargout] = FEBio_run_Iris_Active(x,time_resample,varargin)
+function [e_r_pupil,varargout] = FEBio_run_Iris_Active(x_par_normal,lb,ub,...
+                                                       time_resample,varargin)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %This function reads the jobs/Iris_active.feb and makes
 %changes to it
 %
 %function [dia_pupil,varargout] = FEBio_run_Iris_Active(T,varargin)
 % Inputs 
-%     x (1x5) = [E, v, tau T_Sphicter, T_Diallator]
+%     x_par_normal (1x5) = [E, v, tau T_Sphicter, T_Diallator]// this
+%     variable is normalized between 0 and 1
 %     E                 = Matrix modulus
 %     v                 = Matrix Poisson's ratio
-%     tau               = Matrix kinetics time-constant (sec)
+%     tau               = Matrix kinetics time-constant
 %     T_Sphicter        = Sphicter muscle stress as a function of time (in units of E)
 %     T_Diallator       = Diallator muscle stress as a function of time (in units of E)
+%
+%     lb                = lower bound for parameters
+%     ub                = upper bound for parameters
 %
 %     time_resample     = Time (sec)
 %
@@ -31,6 +36,8 @@ end
 nOutputs = nargout;
 
 %denormalizing the input model parameters
+x = lb + x_par_normal.*(ub-lb);
+x(isnan(x)) = 0;%if any of the parameters is NaN make it zero/ this could happen for T_Diallator
 E   = x(:,1);
 v   = x(:,2);
 tau = x(:,3);
@@ -78,7 +85,8 @@ iris.febio_spec.Material.material.solid{1, 1}.relaxation.tau.Text=sprintf('%.20f
 
 iris.febio_spec.Material.material.solid{1, 2}.T0.Attributes.type = 'math';
 % iris.febio_spec.Material.material.solid{1, 2}.T0.Text = '(1-H((X^2+Y^2)^.5-4))';
-iris.febio_spec.Material.material.solid{1, 2}.T0.Text = '(1-tanh(5*((X^2+Y^2)^.5-4)))*H((X^2+Y^2)^.5-3)';
+%r_s = 3.4; a_s = 1;
+iris.febio_spec.Material.material.solid{1, 2}.T0.Text = '(1-tanh(5*((X^2+Y^2)^.5-4.4)))*H((X^2+Y^2)^.5-3.4)';
 
 iris.febio_spec.Material.material.solid{1, 3}.T0.Text = '1';
 %% Output Logfile
