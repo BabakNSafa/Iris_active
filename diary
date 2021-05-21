@@ -5,582 +5,167 @@ Matlab version 	 9.9.0.1592791 (R2020b) Update 5
 
 Starting iris_active.m ...
 
-08-May-2021 18:22:00
-Iris_active.m run, with grid size of N = 25 
-Find the (middle index - 3) of the time vector...
-Downsample the initial idle time of the pupil (1:10), interp1, and moving average (3)...
+14-May-2021 16:18:21
+Iris_active.m run, with grid size of N = 10 
 Optimization started ...
 Starting parallel pool (parpool) using the 'local' profile ...
 Connected to the parallel pool (number of workers: 12).
 
 ans =
 
-    'Starting cycle number 1/25'
+    'Starting cycle number 1/10'
 
 
 ans =
 
-    'Starting cycle number 2/25'
+    'Starting cycle number 2/10'
 
 
 ans =
 
-    'Starting cycle number 3/25'
+    'Starting cycle number 3/10'
 
 
 ans =
 
-    'Starting cycle number 4/25'
+    'Starting cycle number 4/10'
 
 
 ans =
 
-    'Starting cycle number 5/25'
+    'Starting cycle number 5/10'
 
 
 ans =
 
-    'Starting cycle number 6/25'
+    'Starting cycle number 6/10'
 
 
 ans =
 
-    'Starting cycle number 7/25'
+    'Starting cycle number 7/10'
 
 
 ans =
 
-    'Starting cycle number 8/25'
+    'Starting cycle number 8/10'
 
 
 ans =
 
-    'Starting cycle number 9/25'
+    'Starting cycle number 9/10'
 
 
 ans =
 
-    'Starting cycle number 10/25'
-
-
-ans =
-
-    'Starting cycle number 11/25'
-
-
-ans =
-
-    'Starting cycle number 12/25'
+    'Starting cycle number 10/10'
 
                                             First-order      Norm of
  Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    2.041184e-01    0.000e+00    0.000e+00
-
-Initial point is a local minimum that satisfies the constraints.
-
-Optimization completed because at the initial point, the objective function is non-decreasing 
-in feasible directions to within the value of the optimality tolerance, and 
-constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 7 ended in 0.011 hours
+    0       6    2.444489e-01    0.000e+00    2.506e-02
                                             First-order      Norm of
  Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    2.041184e-01    0.000e+00    0.000e+00
-
-Initial point is a local minimum that satisfies the constraints.
-
-Optimization completed because at the initial point, the objective function is non-decreasing 
-in feasible directions to within the value of the optimality tolerance, and 
-constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 10 ended in 0.012 hours
+    0       6    2.167659e-01    0.000e+00    1.249e-01
                                             First-order      Norm of
  Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    2.041184e-01    0.000e+00    0.000e+00
-
-Initial point is a local minimum that satisfies the constraints.
-
-Optimization completed because at the initial point, the objective function is non-decreasing 
-in feasible directions to within the value of the optimality tolerance, and 
-constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 12 ended in 0.012 hours
+    0       6    2.425549e-01    0.000e+00    7.553e-02
                                             First-order      Norm of
  Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    2.041184e-01    0.000e+00    0.000e+00
-
-Initial point is a local minimum that satisfies the constraints.
-
-Optimization completed because at the initial point, the objective function is non-decreasing 
-in feasible directions to within the value of the optimality tolerance, and 
-constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 2 ended in 0.013 hours
+    0       6    2.445097e-01    0.000e+00    5.619e-02
                                             First-order      Norm of
  Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    2.041184e-01    0.000e+00    0.000e+00
-
-Initial point is a local minimum that satisfies the constraints.
-
-Optimization completed because at the initial point, the objective function is non-decreasing 
-in feasible directions to within the value of the optimality tolerance, and 
-constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 4 ended in 0.018 hours
-
-ans =
-
-    'Starting cycle number 19/25'
-
-
-ans =
-
-    'Starting cycle number 25/25'
-
+    0       6    2.389411e-01    0.000e+00    1.366e+02
                                             First-order      Norm of
  Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    2.041184e-01    0.000e+00    0.000e+00
-
-Initial point is a local minimum that satisfies the constraints.
-
-Optimization completed because at the initial point, the objective function is non-decreasing 
-in feasible directions to within the value of the optimality tolerance, and 
-constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 19 ended in 0.010 hours
+    0       6    2.319025e-01    0.000e+00    1.086e+00
                                             First-order      Norm of
  Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    2.041184e-01    0.000e+00    0.000e+00
-
-Initial point is a local minimum that satisfies the constraints.
-
-Optimization completed because at the initial point, the objective function is non-decreasing 
-in feasible directions to within the value of the optimality tolerance, and 
-constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 25 ended in 0.010 hours
-
-ans =
-
-    'Starting cycle number 24/25'
-
-
-ans =
-
-    'Starting cycle number 22/25'
-
+    0       6    1.737906e-01    0.000e+00    5.562e+05
                                             First-order      Norm of
  Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    1.209015e-01    0.000e+00    1.018e-02
+    0       6    9.096432e-02    0.000e+00    6.936e+02
                                             First-order      Norm of
  Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    1.359819e-01    0.000e+00    1.212e+00
-
-ans =
-
-    'Starting cycle number 14/25'
-
-
-ans =
-
-    'Starting cycle number 16/25'
-
+    0       6    2.222201e-01    0.000e+00    6.902e+03
+    1      12    2.439781e-01    0.000e+00    1.563e-02    1.728e-02
                                             First-order      Norm of
  Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    1.084349e-01    0.000e+00    8.883e-03
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    2.041184e-01    0.000e+00    0.000e+00
-
-Initial point is a local minimum that satisfies the constraints.
-
-Optimization completed because at the initial point, the objective function is non-decreasing 
-in feasible directions to within the value of the optimality tolerance, and 
-constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 24 ended in 0.010 hours
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    1.186209e-01    0.000e+00    2.161e-02
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    1.122923e-01    0.000e+00    2.707e-02
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    1.155119e-01    0.000e+00    2.728e-02
-    1       8    1.208178e-01    0.000e+00    7.895e-03    7.912e-03
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    1.003267e-01    0.000e+00    2.577e-02
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    8.702702e-02    0.000e+00    9.314e-03
-    1       8    1.104508e-01    0.000e+00    1.940e-02    5.209e-01
-    1       8    1.080118e-01    0.000e+00    1.156e-02    1.505e-02
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    1.279309e-01    0.000e+00    1.193e-01
-    1       8    1.178779e-01    0.000e+00    1.957e-02    2.059e-02
-    1       8    1.143886e-01    0.000e+00    2.443e-02    2.499e-02
-    1       8    1.105558e-01    0.000e+00    2.547e-02    3.081e-02
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    9.938363e-02    0.000e+00    4.794e-02
-    2      12    1.199266e-01    0.000e+00    9.537e-03    7.710e-02
-    1       9    9.885416e-02    0.000e+00    2.711e-02    1.996e-02
-    2      13    1.111178e-01    0.000e+00    5.771e-02    2.222e-02
-    2      12    9.446277e-02    0.000e+00    1.182e-01    2.077e-01
-    2      12    1.013884e-01    0.000e+00    4.047e-02    2.139e-01
-    1       8    8.630177e-02    0.000e+00    1.283e-02    2.243e-02
-    2      12    1.095892e-01    0.000e+00    3.224e-02    1.782e-01
-    1       8    8.051010e-02    0.000e+00    8.675e-02    1.112e-01
-    3      17    1.182727e-01    0.000e+00    1.270e-02    1.155e-01
-    2      13    9.110117e-02    0.000e+00    1.392e-02    1.137e-01
-    1      17    9.926065e-02    0.000e+00    5.028e-02    1.735e-03
-    3      17    1.149263e-01    0.000e+00    3.112e-02    8.499e-02
-    3      17    7.964673e-02    0.000e+00    2.782e-01    6.885e-02
-    2      12    9.348455e-02    0.000e+00    3.928e-02    2.479e-01
-    3      17    8.907037e-02    0.000e+00    2.583e-02    2.691e-01
-    2      12    8.599266e-02    0.000e+00    1.917e-02    2.382e-02
-    3      20    8.991491e-02    0.000e+00    5.273e-03    4.412e-01
-    2      14    8.033851e-02    0.000e+00    9.471e-01    8.261e-03
-    4      21    1.115760e-01    0.000e+00    5.802e+00    6.680e-01
-    4      23    1.154196e-01    0.000e+00    2.623e-02    2.603e-02
-    3      22    8.812037e-02    0.000e+00    2.243e-03    1.158e-01
-    4      22    8.877317e-02    0.000e+00    6.874e-03    3.462e-02
-    2      24    9.914899e-02    0.000e+00    5.039e-02    8.844e-04
-    3      18    8.870310e-02    0.000e+00    4.928e-02    1.079e-01
-    4      26    9.017433e-02    0.000e+00    1.156e-02    2.904e-02
-    4      22    6.639162e-02    0.000e+00    1.490e-01    3.469e-02
-    5      27    9.678328e-02    0.000e+00    1.212e-01    1.617e-01
-    5      27    1.133860e-01    0.000e+00    3.633e-02    1.340e-01
-    3      19    8.587988e-02    0.000e+00    2.168e-02    8.813e-03
-    4      26    8.795561e-02    0.000e+00    8.796e-03    2.290e-02
-    5      26    8.871790e-02    0.000e+00    5.466e-03    7.896e-03
-    3      20    7.775010e-02    0.000e+00    7.964e-01    6.155e-02
-    4      26    8.840330e-02    0.000e+00    3.417e-03    3.559e-02
-    5      32    9.015906e-02    0.000e+00    1.190e-02    1.051e-02
-    3      30    8.794234e-02    0.000e+00    3.228e-02    1.007e-01
-    6      31    9.637251e-02    0.000e+00    1.244e-01    7.179e-03
-    6      31    1.087438e-01    0.000e+00    2.693e-02    8.206e-02
-    6      30    8.842505e-02    0.000e+00    7.659e-03    4.855e-02
-    5      28    6.449445e-02    0.000e+00    1.893e-01    8.909e-03
-    5      30    8.742893e-02    0.000e+00    2.515e-02    8.621e-02
-    4      30    8.578111e-02    0.000e+00    1.078e-02    5.074e-03
-    6      36    8.950660e-02    0.000e+00    3.963e-03    1.003e-01
-    5      31    8.835016e-02    0.000e+00    3.139e-03    4.791e-03
-    7      36    9.053226e-02    0.000e+00    2.030e-02    2.584e-01
-    7      34    8.717736e-02    0.000e+00    4.200e-02    2.087e-01
-    4      37    8.495376e-02    0.000e+00    1.316e-02    3.689e-02
-    7      37    9.572112e-02    0.000e+00    1.333e-01    1.243e-02
-    6      35    6.086685e-02    0.000e+00    2.576e-02    1.173e-01
-    4      30    7.625721e-02    0.000e+00    5.813e-01    3.277e-02
-    6      36    8.661597e-02    0.000e+00    5.361e-02    9.469e-02
-    7      41    8.900004e-02    0.000e+00    9.932e-03    1.239e-01
-    8      41    8.826247e-02    0.000e+00    2.154e-02    4.322e-02
-    5      35    8.546717e-02    0.000e+00    1.148e-02    1.877e-02
-    7      39    6.030397e-02    0.000e+00    1.330e-02    2.646e-02
-    8      38    8.621184e-02    0.000e+00    1.632e-01    1.752e-01
-    6      37    8.826298e-02    0.000e+00    4.398e-03    1.037e-02
-    8      47    8.878165e-02    0.000e+00    1.846e-02    7.537e-02
-    5      42    7.620532e-02    0.000e+00    4.439e-01    1.365e-02
-    5      46    8.419112e-02    0.000e+00    5.096e-03    1.827e-02
-    7      41    8.548338e-02    0.000e+00    1.420e-01    1.231e-01
-    9      45    8.867153e-02    0.000e+00    2.001e-02    4.703e-02
-    8      43    6.024805e-02    0.000e+00    1.622e-02    1.054e-02
-    9      51    8.834237e-02    0.000e+00    4.675e-02    1.466e-01
-    9      45    8.534550e-02    0.000e+00    1.733e-01    3.018e-02
-    6      46    8.531686e-02    0.000e+00    7.105e-03    8.891e-03
-    8      42    8.015262e-02    0.000e+00    1.543e-01    1.657e-01
-    8      48    8.505022e-02    0.000e+00    1.632e-01    2.569e-02
-   10      50    8.797875e-02    0.000e+00    1.240e-02    1.687e-02
-    9      47    6.024706e-02    0.000e+00    6.296e-03    3.127e-03
-    6      57    8.413333e-02    0.000e+00    5.144e-03    2.143e-03
-    6      48    7.584559e-02    0.000e+00    4.609e-01    6.890e-03
-   10      55    8.694300e-02    0.000e+00    6.493e-02    1.184e-01
-    7      47    8.822262e-02    0.000e+00    3.830e-03    5.342e-03
-   10      50    7.895134e-02    0.000e+00    1.671e-01    1.034e-01
-   10      51    6.021452e-02    0.000e+00    1.761e-02    8.404e-03
-    9      53    8.072158e-02    0.000e+00    1.778e-01    9.005e-02
-   11      57    8.772066e-02    0.000e+00    1.137e-02    9.844e-03
-    7      58    8.525521e-02    0.000e+00    6.114e-03    3.496e-03
-   11      60    8.258475e-02    0.000e+00    8.296e-02    1.556e-01
-   11      55    6.004364e-02    0.000e+00    3.128e-02    3.799e-02
-   11      57    7.701134e-02    0.000e+00    1.674e-01    1.299e-02
-   12      63    8.727999e-02    0.000e+00    9.600e-03    2.032e-02
-    7      67    8.403087e-02    0.000e+00    5.247e-03    3.764e-03
-    7      58    7.566154e-02    0.000e+00    4.771e-01    3.640e-03
-   10      58    7.162224e-02    0.000e+00    1.993e-01    4.519e-02
-    9      59    8.014921e-02    0.000e+00    1.692e-02    4.281e-04
-   12      59    5.979835e-02    0.000e+00    2.309e-02    5.021e-02
-    8      60    8.821340e-02    0.000e+00    3.608e-03    1.160e-03
-   12      68    6.928857e-02    0.000e+00    1.866e+00    2.681e-01
-   13      68    8.665724e-02    0.000e+00    8.135e-03    3.827e-02
-   12      62    6.810500e-02    0.000e+00    1.027e-01    4.555e-02
-   11      64    6.872754e-02    0.000e+00    2.237e-01    1.137e-02
-    8      70    8.522807e-02    0.000e+00    5.829e-03    1.465e-03
-    8      82    8.402525e-02    0.000e+00    5.262e-03    2.066e-04
-   13      63    5.979465e-02    0.000e+00    5.393e-03    2.629e-03
-    8      73    7.565150e-02    0.000e+00    4.779e-01    1.973e-04
-   14      72    8.573890e-02    0.000e+00    3.646e-02    7.506e-02
-   13      67    6.594137e-02    0.000e+00    5.056e-01    2.766e-02
-   13      73    6.737439e-02    0.000e+00    2.130e-01    9.393e-02
-   12      68    5.950655e-02    0.000e+00    1.910e-01    4.298e-01
-   14      67    5.979209e-02    0.000e+00    1.000e-03    3.513e-04
-    9      83    8.522212e-02    0.000e+00    5.768e-03    3.155e-04
-    9      74    8.821246e-02    0.000e+00    3.628e-03    1.271e-04
-   15      79    8.571907e-02    0.000e+00    3.446e-02    1.096e-03
-   14      80    6.298668e-02    0.000e+00    3.291e-01    1.263e-01
-   13      72    6.351976e-02    0.000e+00    1.104e-01    1.971e-01
-   14      72    6.293904e-02    0.000e+00    6.742e-02    1.419e-01
-   15      71    5.942652e-02    0.000e+00    9.280e-03    8.889e-02
-   10      71    8.014573e-02    0.000e+00    1.702e-02    2.681e-05
-    9      93    8.402032e-02    0.000e+00    5.254e-03    1.809e-04
-    9      85    7.564710e-02    0.000e+00    4.782e-01    8.627e-05
-   14      76    5.998718e-02    0.000e+00    4.293e-02    1.564e-01
-   16      84    8.474933e-02    0.000e+00    1.754e-02    6.016e-02
-   15      77    6.172326e-02    0.000e+00    3.794e-02    2.732e-02
-   15      84    6.166523e-02    0.000e+00    2.898e-01    8.678e-03
-   16      75    5.930120e-02    0.000e+00    2.321e-03    3.376e-02
-   10      88    8.821236e-02    0.000e+00    3.594e-03    1.391e-05
-   15      80    6.016344e-02    0.000e+00    7.565e-02    1.504e-02
-   10      94    8.521690e-02    0.000e+00    5.750e-03    2.752e-04
-   17      88    7.887407e-02    0.000e+00    1.298e-01    2.347e-01
-   16      89    6.008653e-02    0.000e+00    2.273e-02    1.272e-02
-   16      81    6.166804e-02    0.000e+00    7.912e-02    5.874e-02
-   11      95    8.821223e-02    0.000e+00    3.617e-03    2.126e-05
-   17      79    5.929252e-02    0.000e+00    2.000e-04    2.650e-03
-   10      97    7.564517e-02    0.000e+00    4.784e-01    3.773e-05
-   10     107    8.401979e-02    0.000e+00    5.253e-03    1.977e-05
-   16      84    6.007947e-02    0.000e+00    1.105e-01    3.189e-03
-   17      93    6.003109e-02    0.000e+00    3.947e-02    1.034e-02
-   12      99    8.612778e-02    0.000e+00    7.319e-02    3.123e-01
-   18      83    5.916447e-02    0.000e+00    1.822e-04    3.642e-02
-   11      86    8.014554e-02    0.000e+00    1.699e-02    1.467e-06
-   18      93    6.883189e-02    0.000e+00    2.644e-01    1.145e-01
-   17      88    5.974270e-02    0.000e+00    1.735e-01    1.472e-02
-   17      87    6.143121e-02    0.000e+00    6.171e-02    7.462e-03
-   18      97    5.999195e-02    0.000e+00    3.663e-03    6.326e-03
-   19      87    5.914744e-02    0.000e+00    4.003e-05    4.153e-03
-   13     103    8.523414e-02    0.000e+00    7.497e-02    5.174e-02
-   11     109    7.564433e-02    0.000e+00    4.784e-01    1.651e-05
-   18      92    5.948502e-02    0.000e+00    1.343e-01    2.161e-02
-   11     121    8.401973e-02    0.000e+00    5.265e-03    2.162e-06
-   19     101    5.998400e-02    0.000e+00    1.417e-03    1.726e-03
-   20      91    5.910712e-02    0.000e+00    1.572e-04    1.116e-02
-   18      98    6.131516e-02    0.000e+00    5.520e-02    1.976e-03
-   19     102    6.371342e-02    0.000e+00    1.532e-01    6.941e-02
-   14     108    7.960544e-02    0.000e+00    9.617e-02    1.727e-01
-   19      96    5.951954e-02    0.000e+00    6.616e-02    2.822e-02
-   12      99    8.014550e-02    0.000e+00    1.702e-02    3.209e-07
-   20     105    5.996368e-02    0.000e+00    4.030e-03    4.835e-03
-   21      95    5.910603e-02    0.000e+00    5.932e-06    3.313e-04
-   12     121    7.564396e-02    0.000e+00    4.785e-01    7.221e-06
-   20     100    5.962472e-02    0.000e+00    1.324e-02    2.914e-02
-   12     135    8.401972e-02    0.000e+00    5.265e-03    2.366e-07
-   19     104    6.130071e-02    0.000e+00    4.669e-03    3.198e-03
-   15     113    7.202576e-02    0.000e+00    1.170e-01    8.567e-02
-   21     109    5.990791e-02    0.000e+00    9.794e-03    1.265e-02
-   20     111    6.477333e-02    0.000e+00    9.388e-03    9.098e-02
-   21     104    5.972784e-02    0.000e+00    1.273e-02    2.211e-02
-   22     113    5.984541e-02    0.000e+00    1.065e-02    1.371e-02
-   16     119    6.770097e-02    0.000e+00    8.315e-02    2.177e-02
-   13     132    7.564364e-02    0.000e+00    4.785e-01    6.319e-06
-   13     111    8.014548e-02    0.000e+00    1.702e-02    1.404e-07
-   22     108    5.977670e-02    0.000e+00    1.207e-02    1.092e-02
-   20     115    6.098403e-02    0.000e+00    6.301e-03    1.277e-03
-   23     117    5.979483e-02    0.000e+00    4.771e-03    1.063e-02
-   22      99    5.910603e-02    0.000e+00    9.860e-06    1.088e-06
-   17     125    6.682669e-02    0.000e+00    3.539e-01    1.243e-02
-   23     112    5.979018e-02    0.000e+00    4.265e-03    4.135e-03
-   24     121    5.979197e-02    0.000e+00    1.000e-03    1.016e-03
-   21     123    6.414973e-02    0.000e+00    8.033e-03    1.020e-02
-   14     147    7.564362e-02    0.000e+00    4.785e-01    3.455e-07
-   18     131    6.456980e-02    0.000e+00    2.589e-02    1.121e-01
-   21     127    6.096673e-02    0.000e+00    6.151e-03    5.283e-04
-   24     116    5.979200e-02    0.000e+00    1.000e-03    1.072e-03
-   25     125    5.943611e-02    0.000e+00    7.786e-03    8.673e-02
-   22     136    6.406128e-02    0.000e+00    7.915e-03    2.116e-03
-   14     123    8.014547e-02    0.000e+00    1.701e-02    6.144e-08
-   25     120    5.943357e-02    0.000e+00    2.180e-03    8.761e-02
-   19     135    6.398074e-02    0.000e+00    1.604e-02    4.236e-02
-   26     129    5.929588e-02    0.000e+00    1.230e-03    3.730e-02
-   15     159    7.564361e-02    0.000e+00    4.785e-01    1.512e-07
-   23     140    6.044200e-02    0.000e+00    1.199e-01    3.023e-01
-   26     124    5.929997e-02    0.000e+00    1.495e-03    3.531e-02
-   20     139    6.393760e-02    0.000e+00    9.649e-03    7.241e-03
-   27     133    5.929235e-02    0.000e+00    2.000e-04    1.197e-03
-   22     139    6.095930e-02    0.000e+00    6.083e-03    2.313e-04
-   16     171    7.564361e-02    0.000e+00    2.444e+03    6.614e-08
-   23     112    5.910603e-02    0.000e+00    1.491e-06    3.444e-07
-   11     110    8.521676e-02    0.000e+00    1.790e+05    7.507e-06
-
-Local minimum possible. Constraints satisfied.
-
-fmincon stopped because the size of the current step is less than
-the value of the step size tolerance and constraints are 
-satisfied to within the value of the constraint tolerance.
-
-   27     128    5.929199e-02    0.000e+00    2.000e-04    2.378e-03
-Optimization for cycle 16 ended in 0.756 hours
-   24     129    5.910603e-02    0.000e+00    7.814e-07    6.724e-10
-
-Local minimum found that satisfies the constraints.
-
-Optimization completed because the objective function is non-decreasing in 
-feasible directions, to within the value of the optimality tolerance,
-and constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 5 ended in 0.780 hours
-   21     143    6.392676e-02    0.000e+00    8.788e-03    1.033e-03
-   28     137    5.916484e-02    0.000e+00    1.378e-04    3.627e-02
-   24     146    6.059585e-02    0.000e+00    7.812e-02    1.688e-02
-   15     136    8.014547e-02    0.000e+00    1.701e-02    1.344e-08
-   28     132    5.916452e-02    0.000e+00    8.354e-04    3.626e-02
-
-ans =
-
-    'Starting cycle number 17/25'
-
-   29     141    5.914749e-02    0.000e+00    4.003e-05    4.252e-03
-   25     157    6.062583e-02    0.000e+00    2.541e-03    6.986e-04
-   22     147    6.387219e-02    0.000e+00    2.192e-02    4.667e-03
-   29     136    5.914751e-02    0.000e+00    4.003e-05    4.174e-03
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    9.686539e-02    0.000e+00    2.448e-02
-   30     145    5.910697e-02    0.000e+00    1.431e-04    1.122e-02
-
-   23     155    6.095910e-02    0.000e+00    6.082e-03    6.326e-06
-   26     161    5.998706e-02    0.000e+00    7.209e-03    1.022e-01
-   30     140    5.910711e-02    0.000e+00    2.134e-05    1.118e-02
-
-   23     151    6.369867e-02    0.000e+00    5.267e-02    2.058e-02
-    1      11    9.682896e-02    0.000e+00    2.473e-02    4.590e-03
-   16     148    8.014547e-02    0.000e+00    1.701e-02    5.879e-09
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-   31     149    5.910603e-02    0.000e+00    8.790e-06    2.892e-04
-   27     165    5.979657e-02    0.000e+00    7.300e-02    6.353e-02
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-   31     144    5.910603e-02    0.000e+00    7.951e-06    3.231e-04
-   24     156    6.354213e-02    0.000e+00    1.460e-01    6.490e-02
-    2      15    9.211612e-02    0.000e+00    1.683e-02    7.147e-02
-   32     154    5.910603e-02    0.000e+00    6.132e-06    3.747e-06
-   28     169    5.980500e-02    0.000e+00    3.713e-02    1.690e-02
-   25     160    6.329702e-02    0.000e+00    1.270e-01    9.323e-03
-   24     170    6.095909e-02    0.000e+00    6.082e-03    3.460e-07
-   13     147    8.401972e-02    0.000e+00    1.346e+06    1.035e-07
-
-Local minimum possible. Constraints satisfied.
-
-fmincon stopped because the size of the current step is less than
-the value of the step size tolerance and constraints are 
-satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 8 ended in 0.903 hours
-   33     158    5.910603e-02    0.000e+00    4.940e-06    1.474e-06
-   29     174    5.971004e-02    0.000e+00    1.727e-02    1.171e-02
-
-ans =
-
-    'Starting cycle number 20/25'
-
-    3      21    8.897940e-02    0.000e+00    1.819e-02    6.173e-02
-   26     164    6.199414e-02    0.000e+00    6.836e-02    1.087e-01
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    2.041184e-01    0.000e+00    0.000e+00
-
-Initial point is a local minimum that satisfies the constraints.
-
-Optimization completed because at the initial point, the objective function is non-decreasing 
-in feasible directions to within the value of the optimality tolerance, and 
-constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 20 ended in 0.012 hours
-   32     148    5.910603e-02    0.000e+00    1.079e-05    5.307e-07
-   33     159    5.910603e-02    0.000e+00    6.713e-07    6.007e-07
+    0       6    2.091648e-01    0.000e+00    6.203e+04
+    1      13    2.425837e-01    0.000e+00    5.634e-01    6.502e-02
+    1      12    2.430255e-01    0.000e+00    8.929e-01    2.939e-02
+    1      14    2.387154e-01    0.000e+00    6.395e+03    6.221e-02
+    1      12    2.162282e-01    0.000e+00    9.432e+00    9.436e-02
+    1      13    2.023233e-01    0.000e+00    1.818e+02    5.371e-01
+    2      18    2.398662e-01    0.000e+00    5.499e+03    1.515e-01
+    2      20    2.428136e-01    0.000e+00    3.849e-01    9.055e-02
+    2      18    1.037970e-01    0.000e+00    1.382e+05    9.889e-01
+    1      12    1.992941e-01    0.000e+00    4.239e+02    8.208e-01
+    1      13    2.031067e-01    0.000e+00    3.364e+04    4.051e-01
+    2      21    2.371912e-01    0.000e+00    7.148e+03    2.167e-01
+    1      14    2.263030e-01    0.000e+00    4.106e+03    1.792e-01
+    3      26    2.396171e-01    0.000e+00    1.173e-01    1.632e-01
+    2      21    2.161760e-01    0.000e+00    1.113e+01    6.096e-02
+    3      24    2.026382e-01    0.000e+00    1.477e+02    7.634e-01
+    3      28    2.355330e-01    0.000e+00    6.130e+03    2.383e-01
+    2      20    1.959402e-01    0.000e+00    6.940e+03    4.331e-01
+    4      32    2.390065e-01    0.000e+00    2.510e-02    2.349e-02
+    2      21    1.981650e-01    0.000e+00    6.614e+02    4.790e-02
+    4      30    1.930209e-01    0.000e+00    2.013e+02    2.897e-02
+    1      12    1.968349e-01    0.000e+00    4.110e+05    9.930e-01
+    3      27    2.162696e-01    0.000e+00    2.177e+04    3.643e-01
+    4      34    2.250242e-01    0.000e+00    3.155e+04    4.537e-01
+    5      38    2.332388e-01    0.000e+00    3.002e-02    1.801e-01
+    3      31    2.146209e-01    0.000e+00    9.364e+00    1.540e-01
+    5      36    9.321634e-02    0.000e+00    1.122e+02    3.942e-01
+    2      24    2.226124e-01    0.000e+00    3.310e+03    1.163e-01
+    5      42    2.247156e-01    0.000e+00    3.607e+04    5.934e-04
+    3      24    8.579824e-02    0.000e+00    1.801e+01    5.861e-01
+    4      46    2.117650e-01    0.000e+00    2.116e+05    5.125e-03
+    4      34    2.279700e-01    0.000e+00    1.484e+05    2.367e-01
+    6      44    1.400555e-01    0.000e+00    3.429e+05    7.665e-01
+    3      39    2.204792e-01    0.000e+00    1.105e+05    1.277e-02
+    6      50    2.254900e-01    0.000e+00    4.122e+03    1.810e-01
+    2      20    2.321216e-01    0.000e+00    1.607e+02    4.019e-01
+    7      52    1.285567e-01    0.000e+00    1.187e+05    1.228e-01
+    4      45    2.194723e-01    0.000e+00    7.639e+04    1.629e-01
+    5      46    2.327589e-01    0.000e+00    7.878e+04    1.436e-01
+    6      44    9.855150e-02    0.000e+00    4.189e+01    1.225e-01
+    7      56    2.254962e-01    0.000e+00    2.110e+01    3.272e-04
+    4      48    8.579800e-02    0.000e+00    1.626e+05    2.146e-07
+    3      30    1.993937e-01    0.000e+00    3.975e+01    4.620e-02
+    5      54    2.117661e-01    0.000e+00    2.116e+05    8.630e-05
+    5      52    2.191375e-01    0.000e+00    6.588e+04    5.731e-03
+    8      62    2.254976e-01    0.000e+00    1.169e+00    1.097e-04
+    7      59    9.808684e-02    0.000e+00    1.682e+00    9.819e-03
+    4      55    1.993941e-01    0.000e+00    2.618e+05    3.233e-06
+    6      54    2.303974e-01    0.000e+00    1.142e+05    7.568e-02
+    6      58    2.177717e-01    0.000e+00    1.923e+02    2.207e-02
+    9      68    2.255439e-01    0.000e+00    1.259e+00    3.156e-03
+    6      69    2.117593e-01    0.000e+00    2.111e+05    1.479e-04
+    7      65    2.267270e-01    0.000e+00    2.017e+00    7.535e-02
+    8      58    1.166248e-01    0.000e+00    1.298e+06    3.017e-01
+    8      66    9.801873e-02    0.000e+00    1.157e+06    6.061e-04
+    7      65    2.175193e-01    0.000e+00    2.040e+05    2.288e-01
+    5      62    1.993938e-01    0.000e+00    3.998e+04    2.509e-06
+    8      71    2.253844e-01    0.000e+00    1.479e+05    5.472e-02
+    2      37    1.968313e-01    0.000e+00    3.109e+04    1.147e-05
+    9      76    1.163215e-01    0.000e+00    1.187e+05    3.572e-03
+    3      56    2.321216e-01    0.000e+00    7.033e-01    8.907e-10
+    7      81    2.117576e-01    0.000e+00    2.117e+05    3.698e-05
+    9      80    2.227958e-01    0.000e+00    1.663e+05    8.222e-02
+    8      75    2.155391e-01    0.000e+00    9.522e+04    2.927e-02
+    8     101    2.117576e-01    0.000e+00    2.117e+05    3.629e-08
+    6      73    1.993936e-01    0.000e+00    2.618e+05    8.405e-08
+   10      86    2.226785e-01    0.000e+00    1.160e+05    1.503e-01
+    4      92    2.321216e-01    0.000e+00    8.901e-01    1.309e-17
+   10      75    2.277845e-01    0.000e+00    4.316e-01    1.236e-01
+    9      89    2.133948e-01    0.000e+00    4.871e+01    2.740e-02
+    3      88    1.968302e-01    0.000e+00    3.531e+05    2.394e-18
 
 Feasible point with lower objective function value found.
 
-
-Local minimum found that satisfies the constraints.
-
-Optimization completed because the objective function is non-decreasing in 
-feasible directions, to within the value of the optimality tolerance,
-and constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 9 ended in 0.934 hours
-   30     178    5.969521e-02    0.000e+00    8.000e-04    5.524e-03
-
-   17     160    8.014547e-02    0.000e+00    2.592e+03    2.572e-09
-   27     168    6.069011e-02    0.000e+00    2.600e-02    2.284e-01
-
-ans =
-
-    'Starting cycle number 21/25'
-
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-   31     182    5.942092e-02    0.000e+00    1.165e-02    6.948e-02
-    4      33    8.888743e-02    0.000e+00    7.052e-03    3.181e-03
-   28     172    6.037872e-02    0.000e+00    3.592e-02    2.348e-02
-   18     175    8.014547e-02    0.000e+00    2.592e+03    1.373e-11
-   34     162    5.910603e-02    0.000e+00    4.681e-06    6.705e-07
-   35     174    5.910603e-02    0.000e+00    6.820e-07    1.658e-07
-
-Feasible point with lower objective function value found.
-
-
-Local minimum found that satisfies the constraints.
-
-Optimization completed because the objective function is non-decreasing in 
-feasible directions, to within the value of the optimality tolerance,
-and constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 6 ended in 0.971 hours
-   32     186    5.924344e-02    0.000e+00    2.058e-03    4.795e-02
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    1.109147e-01    0.000e+00    1.055e-01
-
-ans =
-
-    'Starting cycle number 18/25'
-
-   25     181    6.095908e-02    0.000e+00    6.082e-03    3.028e-07
-   29     176    5.997439e-02    0.000e+00    8.438e-02    7.253e-02
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    2.041184e-01    0.000e+00    0.000e+00
-
-Initial point is a local minimum that satisfies the constraints.
-
-Optimization completed because at the initial point, the objective function is non-decreasing 
-in feasible directions to within the value of the optimality tolerance, and 
-constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 18 ended in 0.007 hours
-   19     180    8.014547e-02    0.000e+00    2.592e+03    5.364e-12
-    5      47    8.887779e-02    0.000e+00    7.007e-03    3.466e-04
-   33     190    5.925911e-02    0.000e+00    5.946e-04    4.376e-03
-    1      10    1.103204e-01    0.000e+00    9.213e-03    1.243e-02
-   30     180    5.988326e-02    0.000e+00    4.855e-02    1.921e-02
-
-    2      14    1.100836e-01    0.000e+00    1.037e-02    1.224e-02
-   34     194    5.925850e-02    0.000e+00    1.600e-04    1.914e-04
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-   31     184    5.978703e-02    0.000e+00    8.784e-03    2.163e-02
-    6      59    8.887360e-02    0.000e+00    6.982e-03    1.516e-04
-   35     198    5.915188e-02    0.000e+00    7.320e-03    2.998e-02
-   20     186    7.636107e-02    0.000e+00    6.570e+03    2.674e-02
-    3      18    1.072754e-01    0.000e+00    2.492e-02    1.039e-01
-   32     188    5.979053e-02    0.000e+00    1.000e-03    7.330e-04
-    7      71    8.887177e-02    0.000e+00    6.974e-03    6.630e-05
-   17     177    7.564360e-02    0.000e+00    8.622e+06    2.620e-07
+    9     107    1.406683e-01    0.000e+00    5.793e+05    6.978e-01
+    5      61    8.579761e-02    0.000e+00    1.096e+05    1.260e-08
 
 Local minimum possible. Constraints satisfied.
 
@@ -588,41 +173,7 @@ fmincon stopped because the size of the current step is less than
 the value of the step size tolerance and constraints are 
 satisfied to within the value of the constraint tolerance.
 
-   36     202    5.913763e-02    0.000e+00    1.399e-03    3.329e-03
-Optimization for cycle 14 ended in 1.026 hours
-    4      23    9.746410e-02    0.000e+00    1.012e-01    1.563e-01
-   33     192    5.944034e-02    0.000e+00    5.130e-04    8.485e-02
-    8      75    8.852400e-02    0.000e+00    2.900e-02    7.141e-02
-   37     206    5.913766e-02    0.000e+00    3.200e-05    8.205e-05
-   34     196    5.929539e-02    0.000e+00    2.050e-03    3.901e-02
-   21     202    7.634743e-02    0.000e+00    9.624e-03    1.121e-04
-    5      28    8.367894e-02    0.000e+00    2.327e-01    7.856e-02
-    9      81    8.824760e-02    0.000e+00    1.548e-02    8.175e-03
-   38     210    5.911316e-02    0.000e+00    3.807e-04    7.293e-03
-   35     200    5.929206e-02    0.000e+00    7.052e-04    1.109e-03
-   10      85    8.820717e-02    0.000e+00    1.358e-02    7.620e-03
-   39     214    5.911266e-02    0.000e+00    3.133e-05    1.485e-04
-    6      33    7.050548e-02    0.000e+00    1.857e-01    3.955e-02
-   22     221    7.634739e-02    0.000e+00    9.624e-03    3.825e-07
-   36     204    5.929219e-02    0.000e+00    2.000e-04    1.163e-04
-    7      39    6.789789e-02    0.000e+00    3.174e-02    1.012e-02
-   40     218    5.911266e-02    0.000e+00    6.705e-06    2.019e-06
-   37     208    5.916704e-02    0.000e+00    1.079e-03    3.603e-02
-   11      91    8.812848e-02    0.000e+00    1.022e-02    8.560e-03
-    8      43    6.202823e-02    0.000e+00    6.086e-01    6.063e-01
-   23     233    7.634737e-02    0.000e+00    9.624e-03    1.673e-07
-   38     212    5.914717e-02    0.000e+00    1.071e-03    4.647e-03
-   12     104    8.812413e-02    0.000e+00    6.832e-03    5.269e-04
-    9      47    6.103558e-02    0.000e+00    5.425e-02    2.466e-02
-   39     216    5.914745e-02    0.000e+00    4.993e-05    1.296e-04
-   41     223    5.911265e-02    0.000e+00    6.916e-06    4.728e-07
-   10      51    6.070152e-02    0.000e+00    5.139e-02    3.523e-02
-   24     245    7.634736e-02    0.000e+00    9.624e-03    7.321e-08
-   13     109    8.809560e-02    0.000e+00    5.878e-03    3.608e-03
-   40     221    5.914743e-02    0.000e+00    4.000e-05    6.730e-06
-   42     233    5.911265e-02    0.000e+00    6.549e-06    3.943e-07
-   11      55    5.988420e-02    0.000e+00    1.942e-01    3.000e-02
-   26     196    6.095908e-02    0.000e+00    4.792e+00    1.656e-08
+   11      93    2.300719e-01    0.000e+00    8.857e+04    1.533e-01
 
 Local minimum possible. Constraints satisfied.
 
@@ -630,256 +181,15 @@ fmincon stopped because the size of the current step is less than
 the value of the step size tolerance and constraints are 
 satisfied to within the value of the constraint tolerance.
 
-Optimization for cycle 11 ended in 1.174 hours
-   41     225    5.912755e-02    0.000e+00    3.239e-02    8.289e-03
-   43     237    5.910809e-02    0.000e+00    8.176e-03    1.582e-03
-   25     257    7.634736e-02    0.000e+00    9.624e-03    3.203e-08
-   12      59    5.972548e-02    0.000e+00    9.276e-02    1.677e-02
-   14     122    8.809394e-02    0.000e+00    5.809e-03    2.307e-04
-
-ans =
-
-    'Starting cycle number 23/25'
-
-   42     229    5.911829e-02    0.000e+00    7.548e-03    5.583e-04
-   44     241    5.910790e-02    0.000e+00    2.850e-03    1.892e-04
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    1.477484e-01    0.000e+00    3.570e-01
-   13      63    5.976979e-02    0.000e+00    1.621e-02    1.937e-02
-    1       8    2.041184e-01    0.000e+00    5.424e-02    9.113e-01
-   43     233    5.911482e-02    0.000e+00    5.805e-04    9.609e-04
-   45     245    5.910739e-02    0.000e+00    1.772e-03    2.334e-05
-   26     269    7.634735e-02    0.000e+00    9.624e-03    1.401e-08
-   14      67    5.979201e-02    0.000e+00    1.000e-03    4.362e-03
-   15     136    8.809376e-02    0.000e+00    5.790e-03    2.522e-05
-    2      12    2.041184e-01    0.000e+00    5.424e-02    6.103e-01
-   44     237    5.911433e-02    0.000e+00    3.775e-04    3.859e-04
-   46     249    5.910735e-02    0.000e+00    8.687e-04    2.918e-05
-   27     281    7.634735e-02    0.000e+00    9.624e-03    6.130e-09
-   15      71    5.945319e-02    0.000e+00    7.707e-03    8.062e-02
-    3      16    1.102535e-01    0.000e+00    9.339e-02    6.401e-02
-   45     241    5.911426e-02    0.000e+00    3.718e-05    2.539e-05
-   47     253    5.910719e-02    0.000e+00    1.106e-03    1.397e-04
-    4      20    1.086176e-01    0.000e+00    4.290e-02    4.542e-02
-   16      75    5.929098e-02    0.000e+00    4.688e-03    4.491e-02
-   16     149    8.809372e-02    0.000e+00    5.806e-03    5.520e-06
-   46     245    5.911426e-02    0.000e+00    8.000e-06    6.770e-06
-   48     257    5.910706e-02    0.000e+00    1.796e-03    1.958e-04
-    5      24    9.643500e-02    0.000e+00    5.364e-02    2.366e-01
-   17      79    5.929247e-02    0.000e+00    4.353e-04    7.427e-04
-   49     261    5.910696e-02    0.000e+00    1.114e-03    2.172e-04
-   47     249    5.910800e-02    0.000e+00    3.992e-03    1.952e-03
-   28     285    7.095067e-02    0.000e+00    2.105e-01    6.880e-02
-   17     165    8.809372e-02    0.000e+00    5.813e-03    1.508e-07
-    6      28    8.516421e-02    0.000e+00    2.526e-02    1.645e-01
-   18      83    5.929201e-02    0.000e+00    2.000e-04    1.497e-04
-   50     265    5.910692e-02    0.000e+00    3.029e-04    4.647e-05
-   48     254    5.910777e-02    0.000e+00    2.889e-03    1.529e-04
-    7      32    9.064923e-02    0.000e+00    3.601e-02    1.123e-01
-   19      87    5.916578e-02    0.000e+00    5.820e-03    3.606e-02
-   18     177    8.809372e-02    0.000e+00    5.824e-03    6.598e-08
-   51     269    5.910691e-02    0.000e+00    1.241e-05    8.145e-06
-   49     258    5.910723e-02    0.000e+00    1.117e-04    5.743e-04
-    8      36    8.888904e-02    0.000e+00    2.351e-02    3.235e-02
-   20      91    5.914766e-02    0.000e+00    1.917e-03    4.406e-03
-   29     302    7.085721e-02    0.000e+00    3.830e-02    5.276e-05
-   21      95    5.914749e-02    0.000e+00    4.000e-05    1.409e-04
-    9      41    8.750905e-02    0.000e+00    1.999e-02    2.356e-02
-   52     273    5.910691e-02    0.000e+00    1.120e-05    2.249e-06
-   50     262    5.910723e-02    0.000e+00    1.680e-05    1.899e-06
-   22      99    5.911502e-02    0.000e+00    4.817e-04    9.008e-03
-   10      46    8.636934e-02    0.000e+00    1.244e-02    2.386e-02
-   30     314    7.085086e-02    0.000e+00    3.828e-02    2.378e-05
-
-   51     268    5.910723e-02    0.000e+00    3.554e-06    3.623e-07
-   23     103    5.911422e-02    0.000e+00    5.262e-05    2.393e-04
-   11      51    8.603206e-02    0.000e+00    1.328e-02    1.213e-02
-   52     274    5.910723e-02    0.000e+00    3.093e-06    4.778e-07
-   12      58    8.597916e-02    0.000e+00    7.858e-03    3.442e-03
-   53     279    5.910691e-02    0.000e+00    6.017e-06    2.344e-06
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-   31     327    7.084947e-02    0.000e+00    3.827e-02    5.167e-06
-   13      62    8.458690e-02    0.000e+00    3.668e-02    7.454e-02
-   54     294    5.910691e-02    0.000e+00    1.956e-06    3.426e-08
-   24     107    5.911423e-02    0.000e+00    1.681e-05    5.267e-06
-   14      66    8.382089e-02    0.000e+00    4.130e-02    5.429e-02
-   53     280    5.910723e-02    0.000e+00    4.236e-06    1.780e-07
-   55     298    5.910674e-02    0.000e+00    1.704e-03    1.259e-04
-   32     341    7.084931e-02    0.000e+00    3.827e-02    5.657e-07
-   19     188    8.809372e-02    0.000e+00    3.526e+06    5.771e-08
-   25     120    5.911423e-02    0.000e+00    8.233e-06    6.677e-06
-   56     302    5.910642e-02    0.000e+00    2.300e-03    3.577e-04
-   15      74    8.169147e-02    0.000e+00    1.389e-02    1.173e-01
-   26     125    5.911216e-02    0.000e+00    1.250e-02    1.026e-03
-   57     306    5.910638e-02    0.000e+00    1.498e-03    7.288e-05
-   16      81    8.093535e-02    0.000e+00    1.569e-02    2.409e-02
-   27     129    5.910917e-02    0.000e+00    5.407e-03    4.653e-04
-   33     352    7.084918e-02    0.000e+00    3.827e-02    4.928e-07
-   58     310    5.910638e-02    0.000e+00    1.162e-03    5.243e-06
-   54     290    5.910723e-02    0.000e+00    1.670e-06    5.930e-08
-   17      88    7.991002e-02    0.000e+00    2.038e-02    2.812e-02
-   28     133    5.910673e-02    0.000e+00    8.259e-04    6.550e-04
-   59     314    5.910636e-02    0.000e+00    7.509e-04    9.791e-06
-   29     137    5.910728e-02    0.000e+00    1.940e-04    2.078e-04
-   55     303    5.910722e-02    0.000e+00    2.434e-04    1.836e-04
-   18      92    5.959406e-02    0.000e+00    1.133e-02    2.537e-01
-   60     318    5.910634e-02    0.000e+00    7.113e-04    2.377e-05
-
-   34     366    7.084917e-02    0.000e+00    3.827e-02    5.396e-08
-   30     141    5.910725e-02    0.000e+00    2.784e-04    9.956e-05
-
-   19      99    6.044208e-02    0.000e+00    1.633e-01    1.761e-02
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-   61     322    5.910626e-02    0.000e+00    1.486e-03    6.784e-05
-   56     309    5.910720e-02    0.000e+00    6.037e-04    1.483e-05
-   20     222    8.809372e-02    0.000e+00    3.526e+06    7.501e-15
-
-Local minimum possible. Constraints satisfied.
-
-fmincon stopped because the size of the current step is less than
-the value of the step size tolerance and constraints are 
-satisfied to within the value of the constraint tolerance.
-
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-   31     145    5.910724e-02    0.000e+00    1.123e-04    2.986e-05
-Optimization for cycle 17 ended in 0.737 hours
-   62     326    5.910613e-02    0.000e+00    2.394e-03    1.414e-04
-   32     149    5.910723e-02    0.000e+00    2.611e-05    1.782e-06
-   20     104    6.103346e-02    0.000e+00    4.444e-02    6.477e-02
-   63     330    5.910597e-02    0.000e+00    2.116e-03    2.185e-04
-   21     111    6.067653e-02    0.000e+00    3.547e-02    8.511e-03
-   64     334    5.910592e-02    0.000e+00    8.697e-04    1.016e-04
-   57     315    5.910719e-02    0.000e+00    8.399e-04    2.113e-05
-   22     116    6.023127e-02    0.000e+00    2.852e-02    3.590e-02
-   65     338    5.910590e-02    0.000e+00    1.569e-04    1.511e-05
-   33     153    5.910723e-02    0.000e+00    8.713e-06    1.226e-06
-   23     120    6.046559e-02    0.000e+00    3.117e-02    2.041e-02
-   66     342    5.910589e-02    0.000e+00    4.046e-05    2.656e-05
-   58     327    5.910718e-02    0.000e+00    4.506e-05    1.065e-04
-   34     165    5.910723e-02    0.000e+00    1.602e-06    1.937e-07
-   24     124    6.047042e-02    0.000e+00    3.148e-02    4.164e-03
-   67     346    5.910589e-02    0.000e+00    1.188e-05    1.367e-06
-   35     170    5.910671e-02    0.000e+00    4.163e-03    2.074e-04
-   59     335    5.910717e-02    0.000e+00    3.029e-05    3.358e-05
-   25     128    6.044654e-02    0.000e+00    2.881e-02    1.172e-02
-   68     352    5.910589e-02    0.000e+00    1.299e-05    2.210e-06
-   36     174    5.910628e-02    0.000e+00    2.707e-03    1.519e-04
-   26     132    6.042657e-02    0.000e+00    1.883e-02    3.742e-02
-   37     178    5.910593e-02    0.000e+00    5.123e-04    1.256e-04
-   60     342    5.910716e-02    0.000e+00    6.942e-05    1.187e-05
-
-   27     136    6.065110e-02    0.000e+00    4.000e-03    8.048e-02
-   38     182    5.910599e-02    0.000e+00    2.574e-04    3.919e-05
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-   61     350    5.910713e-02    0.000e+00    1.722e-05    5.591e-05
-   28     140    6.016810e-02    0.000e+00    1.285e-02    5.424e-02
-   39     186    5.910598e-02    0.000e+00    3.425e-04    6.228e-05
-   62     354    5.910688e-02    0.000e+00    4.542e-04    2.469e-04
-   69     356    5.910589e-02    0.000e+00    7.469e-06    1.351e-06
-   29     144    5.978391e-02    0.000e+00    3.747e-02    7.716e-02
-   40     190    5.910596e-02    0.000e+00    3.949e-04    8.501e-05
-   63     358    5.910647e-02    0.000e+00    1.005e-03    2.597e-04
-   35     379    7.084916e-02    0.000e+00    1.658e+06    1.181e-08
-
-Local minimum possible. Constraints satisfied.
-
-fmincon stopped because the size of the current step is less than
-the value of the step size tolerance and constraints are 
-satisfied to within the value of the constraint tolerance.
-
-   30     148    5.967229e-02    0.000e+00    1.295e-02    2.298e-02
-
-Optimization for cycle 3 ended in 1.687 hours
-
-ans =
-
-    'Starting cycle number 15/25'
-
-   41     194    5.910595e-02    0.000e+00    1.447e-04    3.194e-05
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    2.041184e-01    0.000e+00    0.000e+00
-
-Initial point is a local minimum that satisfies the constraints.
-
-Optimization completed because at the initial point, the objective function is non-decreasing 
-in feasible directions to within the value of the optimality tolerance, and 
-constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 15 ended in 0.006 hours
-   64     362    5.910612e-02    0.000e+00    7.787e-04    1.001e-04
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-   31     152    5.968622e-02    0.000e+00    8.000e-04    2.674e-03
-   42     198    5.910595e-02    0.000e+00    7.237e-06    5.141e-06
-   65     366    5.910602e-02    0.000e+00    1.484e-04    3.089e-04
-   32     156    5.936287e-02    0.000e+00    2.230e-03    8.235e-02
-   66     370    5.910595e-02    0.000e+00    2.133e-05    1.524e-04
-   33     160    5.926438e-02    0.000e+00    3.373e-03    2.697e-02
-   34     164    5.925855e-02    0.000e+00    6.368e-04    1.911e-03
-   67     374    5.910595e-02    0.000e+00    7.222e-06    7.922e-07
-   35     168    5.925871e-02    0.000e+00    1.600e-04    2.988e-05
-   70     370    5.910589e-02    0.000e+00    1.012e-06    1.965e-08
-   43     202    5.910595e-02    0.000e+00    3.026e-06    4.107e-06
-   44     217    5.910595e-02    0.000e+00    6.723e-07    2.100e-08
-
-Feasible point with lower objective function value found.
-
-
-Local minimum found that satisfies the constraints.
-
-Optimization completed because the objective function is non-decreasing in 
-feasible directions, to within the value of the optimality tolerance,
-and constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 21 ended in 0.820 hours
-   36     172    5.914938e-02    0.000e+00    4.524e-03    3.055e-02
-   37     176    5.913767e-02    0.000e+00    7.515e-04    2.812e-03
-   38     180    5.913766e-02    0.000e+00    3.200e-05    3.124e-05
-   71     396    5.910589e-02    0.000e+00    1.346e-06    7.543e-14
-   39     184    5.911319e-02    0.000e+00    7.199e-04    7.293e-03
-   40     188    5.911266e-02    0.000e+00    6.207e-05    1.523e-04
-   41     192    5.911265e-02    0.000e+00    8.287e-06    2.882e-06
-   68     380    5.910595e-02    0.000e+00    1.531e-05    2.020e-07
-   72     407    5.910589e-02    0.000e+00    1.287e-06    6.573e-14
-   42     199    5.911265e-02    0.000e+00    6.400e-06    4.382e-07
-   43     203    5.910821e-02    0.000e+00    6.688e-03    1.675e-03
-   44     207    5.910802e-02    0.000e+00    2.126e-03    1.441e-04
-   45     211    5.910725e-02    0.000e+00    8.063e-04    1.887e-04
-   46     215    5.910707e-02    0.000e+00    1.475e-03    2.147e-04
-   47     219    5.910695e-02    0.000e+00    7.637e-04    2.360e-04
-   73     422    5.910589e-02    0.000e+00    1.287e-06    3.581e-15
-
-Local minimum possible. Constraints satisfied.
-
-fmincon stopped because the size of the current step is less than
-the value of the step size tolerance and constraints are 
-satisfied to within the value of the constraint tolerance.
-
-   48     223    5.910692e-02    0.000e+00    1.998e-04    2.509e-05
-Optimization for cycle 1 ended in 1.895 hours
-
-ans =
-
-    'Starting cycle number 13/25'
-
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-    0       4    2.041184e-01    0.000e+00    0.000e+00
-
-Initial point is a local minimum that satisfies the constraints.
-
-Optimization completed because at the initial point, the objective function is non-decreasing 
-in feasible directions to within the value of the optimality tolerance, and 
-constraints are satisfied to within the value of the constraint tolerance.
-
-Optimization for cycle 13 ended in 0.004 hours
-   69     410    5.910595e-02    0.000e+00    1.673e-06    8.853e-14
+Optimization for cycle 10 ended in 0.092 hours
+Optimization for cycle 6 ended in 0.094 hours
+   10     114    1.351940e-01    0.000e+00    1.430e+05    1.890e-01
+   12      99    2.300334e-01    0.000e+00    5.912e+02    2.792e-03
+   11     107    2.277845e-01    0.000e+00    6.297e-01    8.178e-08
+    7      86    1.993935e-01    0.000e+00    4.648e+01    1.051e-08
+   11     120    1.344718e-01    0.000e+00    5.739e+05    1.082e-02
+   12     119    2.277845e-01    0.000e+00    4.684e-01    1.799e-08
+    5     103    2.321216e-01    0.000e+00    8.287e-01    4.615e-17
 
 Feasible point with lower objective function value found.
 
@@ -890,40 +200,6003 @@ fmincon stopped because the size of the current step is less than
 the value of the step size tolerance and constraints are 
 satisfied to within the value of the constraint tolerance.
 
-Optimization for cycle 22 ended in 1.885 hours
-   49     227    5.910691e-02    0.000e+00    1.024e-05    5.450e-06
-   50     232    5.910691e-02    0.000e+00    8.019e-06    9.589e-07
-   51     238    5.910691e-02    0.000e+00    4.534e-06    1.921e-07
-   52     259    5.910691e-02    0.000e+00    1.853e-06    4.659e-11
-   53     263    5.910644e-02    0.000e+00    6.908e-04    4.944e-04
-   54     267    5.910635e-02    0.000e+00    7.894e-04    3.134e-05
-   55     271    5.910606e-02    0.000e+00    2.400e-03    1.853e-04
-   56     275    5.910596e-02    0.000e+00    2.065e-03    2.237e-04
-   57     279    5.910591e-02    0.000e+00    9.614e-04    1.014e-04
-   58     283    5.910589e-02    0.000e+00    1.741e-04    1.430e-05
-   59     287    5.910589e-02    0.000e+00    1.493e-05    2.038e-05
-   60     301    5.910589e-02    0.000e+00    1.239e-06    4.864e-08
+Optimization for cycle 8 ended in 0.104 hours
+   10      87    1.139268e-01    0.000e+00    1.110e+05    6.262e-03
+   10      96    2.139291e-01    0.000e+00    4.700e+01    1.731e-02
+   12     126    1.220610e-01    0.000e+00    1.279e+05    2.860e-01
+   11     116    2.139290e-01    0.000e+00    8.937e+04    3.998e-05
+   13     137    1.208210e-01    0.000e+00    1.398e+05    2.410e-01
+   11     119    1.139265e-01    0.000e+00    1.110e+05    1.446e-09
+   13     107    2.282961e-01    0.000e+00    4.585e+02    1.211e-01
+   12     123    2.139281e-01    0.000e+00    2.276e+05    4.236e-05
+   12     132    1.139252e-01    0.000e+00    2.124e+05    1.807e-10
+   14     144    1.100110e-01    0.000e+00    1.635e+05    3.590e-02
+    9      79    8.078361e-02    0.000e+00    1.157e+06    2.409e-04
 
-                                            First-order      Norm of
- Iter F-count            f(x)  Feasibility   optimality         step
-   61     305    5.910589e-02    0.000e+00    7.255e-06    4.943e-07
-   62     310    5.910589e-02    0.000e+00    4.633e-06    5.790e-08
-   63     314    5.910589e-02    0.000e+00    3.440e-06    1.469e-07
-   64     320    5.910589e-02    0.000e+00    4.538e-06    7.348e-09
-   65     325    5.910589e-02    0.000e+00    3.349e-06    5.105e-08
-   66     337    5.910589e-02    0.000e+00    1.403e-06    9.226e-09
-   67     342    5.910589e-02    0.000e+00    3.696e-06    3.614e-10
-   68     350    5.910589e-02    0.000e+00    2.559e-07    4.458e-08
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+   13     133    2.139275e-01    0.000e+00    2.135e+05    3.070e-05
+Optimization for cycle 2 ended in 0.121 hours
+   13     138    1.070675e-01    0.000e+00    1.464e+05    5.792e-01
+    8     102    1.993921e-01    0.000e+00    7.649e+04    1.381e-10
+   14     140    2.139293e-01    0.000e+00    2.134e+05    7.801e-05
+   14     150    1.069176e-01    0.000e+00    1.068e+03    1.568e-02
+   15     150    2.139329e-01    0.000e+00    1.998e+05    1.383e-04
+   13     126    2.277844e-01    0.000e+00    1.891e+00    3.000e-08
+
+Feasible point with lower objective function value found.
+
+   15     157    1.066952e-01    0.000e+00    8.403e+02    6.254e-04
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 4 ended in 0.132 hours
+   16     157    2.139357e-01    0.000e+00    2.276e+05    1.479e-04
+   15     153    1.070396e-01    0.000e+00    3.163e+05    1.977e-02
+    9     134    1.993920e-01    0.000e+00    3.129e+05    2.588e-16
 
 Feasible point with lower objective function value found.
 
 
-Local minimum found that satisfies the constraints.
+Local minimum possible. Constraints satisfied.
 
-Optimization completed because the objective function is non-decreasing in 
-feasible directions, to within the value of the optimality tolerance,
-and constraints are satisfied to within the value of the constraint tolerance.
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
 
-Optimization for cycle 23 ended in 0.956 hours
-08-May-2021 20:30:34 
-Analyses concluded! 
+Optimization for cycle 7 ended in 0.138 hours
+   14     131    2.282912e-01    0.000e+00    2.222e+02    1.984e-06
+   16     164    1.046288e-01    0.000e+00    1.246e+05    3.186e-03
+   17     164    2.305271e-01    0.000e+00    2.722e+04    5.495e-01
+   15     178    2.280980e-01    0.000e+00    7.252e+03    1.445e-17
+
+Feasible point with lower objective function value found.
+
+   16     183    1.070392e-01    0.000e+00    3.144e+05    1.197e-07
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 9 ended in 0.147 hours
+   18     192    2.305271e-01    0.000e+00    1.776e+02    3.209e-09
+   17     186    1.046235e-01    0.000e+00    6.438e+02    7.675e-07
+   17     213    1.070344e-01    0.000e+00    3.147e+05    1.083e-13
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 1 ended in 0.159 hours
+   19     206    2.305271e-01    0.000e+00    2.133e+02    2.168e-10
+
+Feasible point with lower objective function value found.
+
+   18     211    1.025811e-01    0.000e+00    1.246e+05    2.691e-11
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 5 ended in 0.163 hours
+Optimization for cycle 3 ended in 0.163 hours
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Iris_active', '/home/asixbabak/Dropbox (GaTech)/project-IrisBiomechanics/FE/Iris_active/Iris_active.m', 93)" style="font-weight:bold">Iris_active</a> (<a href="matlab: opentoline('/home/asixbabak/Dropbox (GaTech)/project-IrisBiomechanics/FE/Iris_active/Iris_active.m',93,0)">line 93</a>)
+Unknown error occurred.
+} 
+Iris_active
+Active Iris Curve Fitting
+Written by Babak N. Safa (Ethier Lab)
+
+Matlab version 	 9.9.0.1592791 (R2020b) Update 5 
+
+Starting iris_active.m ...
+
+14-May-2021 16:29:37
+Iris_active.m run, with grid size of N = 10 
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+Optimization started ...
+
+ans =
+
+    'Starting cycle number 1/10'
+
+
+ans =
+
+    'Starting cycle number 2/10'
+
+
+ans =
+
+    'Starting cycle number 3/10'
+
+
+ans =
+
+    'Starting cycle number 4/10'
+
+
+ans =
+
+    'Starting cycle number 5/10'
+
+
+ans =
+
+    'Starting cycle number 6/10'
+
+
+ans =
+
+    'Starting cycle number 7/10'
+
+
+ans =
+
+    'Starting cycle number 8/10'
+
+
+ans =
+
+    'Starting cycle number 9/10'
+
+
+ans =
+
+    'Starting cycle number 10/10'
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    2.392381e-01    0.000e+00    6.217e+03
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    2.389213e-01    0.000e+00    4.914e+03
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    2.404710e-01    0.000e+00    9.026e+01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    2.373126e-01    0.000e+00    1.262e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    2.087590e-01    0.000e+00    1.680e+01
+
+ans =
+
+     0
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    2.410612e-01    0.000e+00    1.290e-01
+
+ans =
+
+     0
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    9.196588e-02    0.000e+00    1.563e+05
+
+ans =
+
+     0
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    2.272669e-01    0.000e+00    7.405e+01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    2.145451e-01    0.000e+00    6.258e+01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    2.123093e-01    0.000e+00    6.218e+04
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    1      12    2.370066e-01    0.000e+00    1.075e-02    1.618e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    1      13    2.361641e-01    0.000e+00    2.488e+03    4.353e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    1      12    2.169601e-01    0.000e+00    5.115e+04    8.156e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    1      12    2.392574e-01    0.000e+00    1.007e+01    1.460e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    1      13    2.222012e-01    0.000e+00    1.507e+05    4.286e-01
+
+ans =
+
+     0
+
+    1      13    1.098893e-01    0.000e+00    1.599e+05    4.753e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    1      15    2.391778e-01    0.000e+00    1.217e+04    8.093e-02
+
+ans =
+
+     0
+
+    1      13    2.190586e-01    0.000e+00    1.963e+05    4.744e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    1      13    2.189160e-01    0.000e+00    2.082e+04    5.491e-01
+
+ans =
+
+     0
+
+    1      13    2.033900e-01    0.000e+00    2.161e+04    4.220e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    2      18    2.337842e-01    0.000e+00    3.367e-01    1.500e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    2      20    2.242868e-01    0.000e+00    2.001e+03    3.890e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    2      19    2.387394e-01    0.000e+00    7.076e+03    4.171e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    2      20    1.060816e-01    0.000e+00    3.388e+02    3.348e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    3      24    2.334911e-01    0.000e+00    4.685e-01    6.080e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    2      18    1.964682e-01    0.000e+00    3.488e+06    8.394e-01
+
+ans =
+
+     0
+
+    2      23    2.159420e-01    0.000e+00    1.500e+05    2.510e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    2      25    2.228405e-01    0.000e+00    9.534e+04    9.407e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    3      27    8.227127e-02    0.000e+00    1.539e+06    2.276e-01
+
+ans =
+
+     0
+
+    3      30    2.254711e-01    0.000e+00    8.212e+03    1.040e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    4      30    2.269102e-01    0.000e+00    1.530e+00    5.819e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    3      30    2.186233e-01    0.000e+00    3.267e+05    2.234e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    3      32    2.231895e-01    0.000e+00    9.479e+04    3.142e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    3      33    2.386626e-01    0.000e+00    6.954e+03    1.484e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    2      34    2.391742e-01    0.000e+00    6.198e+03    7.586e-05
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    2      29    2.029884e-01    0.000e+00    2.011e+04    7.360e-03
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    4      33    2.006658e-01    0.000e+00    3.565e+05    3.957e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    3      24    1.832109e-01    0.000e+00    4.383e+06    1.949e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    4      38    2.128531e-01    0.000e+00    2.045e+05    1.088e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    5      40    2.091323e-01    0.000e+00    1.532e+05    3.745e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    3      41    2.391775e-01    0.000e+00    5.859e+03    9.271e-06
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    3      36    2.033160e-01    0.000e+00    3.024e+04    5.236e-03
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    6      46    1.452635e-01    0.000e+00    1.213e+05    6.218e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    4      48    2.383982e-01    0.000e+00    1.712e+02    2.975e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    5      46    2.134403e-01    0.000e+00    2.153e+05    9.462e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    2      44    2.189159e-01    0.000e+00    1.589e+02    1.708e-07
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    5      47    1.955667e-01    0.000e+00    2.016e+05    2.930e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    4      44    1.994175e-01    0.000e+00    3.186e+05    1.753e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    4      56    2.386624e-01    0.000e+00    6.966e+03    2.279e-06
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    7      55    1.456649e-01    0.000e+00    6.828e+05    1.243e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    4      33    1.734678e-01    0.000e+00    2.512e+05    3.816e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    6      56    2.216220e-01    0.000e+00    1.303e-01    2.854e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    4      62    2.231894e-01    0.000e+00    1.257e+05    1.811e-07
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    5      65    2.383976e-01    0.000e+00    5.697e+03    2.671e-04
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    5      52    2.066515e-01    0.000e+00    1.457e+04    1.970e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    4      66    2.254711e-01    0.000e+00    8.212e+03    8.265e-09
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    6      72    2.383965e-01    0.000e+00    1.207e+03    2.677e-04
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    3      62    2.180617e-01    0.000e+00    3.460e+04    5.967e-10
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    6      61    2.074737e-01    0.000e+00    1.448e+04    7.279e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    7      78    2.383486e-01    0.000e+00    9.360e+00    3.702e-03
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    7      67    2.074674e-01    0.000e+00    7.175e+01    6.031e-04
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    8      85    2.266191e-01    0.000e+00    1.364e+05    3.870e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    5      87    2.231894e-01    0.000e+00    1.257e+05    5.423e-12
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    8      73    2.074588e-01    0.000e+00    9.035e-01    1.002e-03
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    8      85    1.456648e-01    0.000e+00    5.474e+00    7.413e-07
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    5      95    2.386624e-01    0.000e+00    6.969e+03    4.245e-15
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    7      88    2.216220e-01    0.000e+00    1.053e+00    1.743e-08
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    6      79    1.955667e-01    0.000e+00    2.016e+05    8.059e-09
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    9      83    2.074321e-01    0.000e+00    7.677e-01    2.006e-03
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    7      87    1.955667e-01    0.000e+00    3.546e+05    4.004e-09
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    9      95    1.456646e-01    0.000e+00    7.493e+05    8.338e-07
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+   10      89    2.167639e-01    0.000e+00    1.965e+05    2.144e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+    8     107    2.216220e-01    0.000e+00    8.889e+03    2.311e-10
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+   10     102    1.456642e-01    0.000e+00    2.782e+04    6.773e-07
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+Feasible point with lower objective function value found.
+
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 10 ended in 0.098 hours
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 6 ended in 0.101 hours
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+   11     108    1.001993e-01    0.000e+00    6.609e+05    1.402e-01
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+Feasible point with lower objective function value found.
+
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 5 ended in 0.104 hours
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+   11     102    2.163368e-01    0.000e+00    1.386e+05    1.464e-02
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+Feasible point with lower objective function value found.
+
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 9 ended in 0.108 hours
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+
+ans =
+
+     0
+
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('distcomp.remoteparfor/getCompleteIntervals', '/usr/local/MATLAB/R2020b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m', 379)" style="font-weight:bold">distcomp.remoteparfor/getCompleteIntervals</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2020b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m',379,0)">line 379</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>distributed_execution', '/usr/local/MATLAB/R2020b/toolbox/matlab/lang/parallel_function.m', 741)" style="font-weight:bold">parallel_function>distributed_execution</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2020b/toolbox/matlab/lang/parallel_function.m',741,0)">line 741</a>)
+        [tags, out] = P.getCompleteIntervals(chunkSize);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function', '/usr/local/MATLAB/R2020b/toolbox/matlab/lang/parallel_function.m', 573)" style="font-weight:bold">parallel_function</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2020b/toolbox/matlab/lang/parallel_function.m',573,0)">line 573</a>)
+    R = distributed_execution(...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Iris_active', '/home/asixbabak/Dropbox (GaTech)/project-IrisBiomechanics/FE/Iris_active/Iris_active.m', 93)" style="font-weight:bold">Iris_active</a> (<a href="matlab: opentoline('/home/asixbabak/Dropbox (GaTech)/project-IrisBiomechanics/FE/Iris_active/Iris_active.m',93,0)">line 93</a>)
+parfor i=1:N
+} 
+Iris_active
+Active Iris Curve Fitting
+Written by Babak N. Safa (Ethier Lab)
+
+Matlab version 	 9.9.0.1592791 (R2020b) Update 5 
+
+Starting iris_active.m ...
+
+14-May-2021 16:37:14
+Iris_active.m run, with grid size of N = 10 
+Optimization started ...
+
+ans =
+
+    'Starting cycle number 5/10'
+
+
+ans =
+
+    'Starting cycle number 6/10'
+
+
+ans =
+
+    'Starting cycle number 9/10'
+
+
+ans =
+
+    'Starting cycle number 10/10'
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    2.367980e-01    0.000e+00    1.353e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    2.329735e-01    0.000e+00    9.720e+01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    1.876950e-01    0.000e+00    7.930e+01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       6    2.323982e-01    0.000e+00    1.262e+04
+    1      12    2.357740e-01    0.000e+00    6.299e-02    3.656e-02
+    1      13    2.161331e-01    0.000e+00    1.411e+02    3.124e-01
+    1      13    2.240953e-01    0.000e+00    1.316e+04    4.670e-01
+    2      18    2.350006e-01    0.000e+00    9.651e-02    8.723e-02
+    1      13    2.289795e-01    0.000e+00    1.398e+05    4.467e-01
+    3      24    2.220937e-01    0.000e+00    1.434e+02    3.930e-01
+    2      26    2.264877e-01    0.000e+00    2.470e+04    6.552e-02
+    2      20    2.272428e-01    0.000e+00    3.491e+04    3.146e-01
+    4      31    2.042399e-01    0.000e+00    7.541e+04    1.556e-01
+    3      32    2.284970e-01    0.000e+00    2.436e+00    1.646e-01
+    3      33    2.288763e-01    0.000e+00    2.651e+05    3.163e-02
+    5      37    2.024199e-01    0.000e+00    3.523e+04    4.069e-01
+    4      40    2.367421e-01    0.000e+00    1.203e+05    3.544e-01
+    2      20    1.883573e-01    0.000e+00    2.500e+01    2.411e-01
+    4      38    2.240897e-01    0.000e+00    1.523e+05    1.879e-01
+    5      47    2.395455e-01    0.000e+00    1.129e+05    4.159e-01
+    6      43    1.865986e-01    0.000e+00    1.239e+05    6.598e-01
+    5      57    2.239126e-01    0.000e+00    1.592e+05    8.100e-05
+    6      64    2.394549e-01    0.000e+00    4.881e+03    2.145e-06
+    7      54    1.718984e-01    0.000e+00    2.202e+05    2.766e-01
+    6      64    2.239126e-01    0.000e+00    1.595e+05    3.747e-05
+    7      71    2.303236e-01    0.000e+00    9.744e+04    4.333e-01
+    7      71    2.394549e-01    0.000e+00    6.082e+03    3.294e-06
+    8      77    2.303235e-01    0.000e+00    4.887e+02    1.241e-05
+    8      61    1.719490e-01    0.000e+00    3.288e+05    2.695e-03
+    9      83    2.302617e-01    0.000e+00    1.239e+04    1.705e-03
+    8      89    2.394549e-01    0.000e+00    5.697e+03    2.294e-08
+    9      72    1.383961e-01    0.000e+00    3.453e+06    1.012e-01
+   10      89    2.260013e-01    0.000e+00    3.140e-01    1.161e-01
+    3      54    1.883572e-01    0.000e+00    5.716e+00    3.515e-08
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 9 ended in 0.043 hours
+   11      97    2.245290e-01    0.000e+00    1.018e-01    3.779e-02
+    9      96    2.394549e-01    0.000e+00    6.082e+03    1.729e-08
+   10      78    1.277485e-01    0.000e+00    7.234e+06    9.304e-03
+   12     103    2.242936e-01    0.000e+00    5.326e-02    7.254e-03
+   11      86    1.256210e-01    0.000e+00    3.842e+06    2.498e-02
+   13     109    2.195038e-01    0.000e+00    3.188e-01    1.601e-01
+   12      92    1.178853e-01    0.000e+00    4.406e+06    8.699e-02
+   14     130    2.195037e-01    0.000e+00    6.261e+03    9.343e-06
+   10     111    2.394549e-01    0.000e+00    5.697e+03    1.499e-09
+
+Feasible point with lower objective function value found.
+
+   15     136    2.195036e-01    0.000e+00    3.059e+03    1.457e-06
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 10 ended in 0.058 hours
+   13     107    1.177870e-01    0.000e+00    2.969e+04    7.573e-04
+   16     142    2.195031e-01    0.000e+00    1.124e-01    8.327e-06
+   17     148    2.195026e-01    0.000e+00    7.291e-02    9.835e-06
+   18     154    2.195019e-01    0.000e+00    7.032e+03    1.966e-05
+   19     160    2.194999e-01    0.000e+00    7.361e+03    3.373e-05
+   14     114    1.176880e-01    0.000e+00    5.736e+05    1.361e-05
+   20     166    2.194979e-01    0.000e+00    1.113e-01    3.491e-05
+   21     180    2.194979e-01    0.000e+00    3.058e+03    1.440e-07
+   22     188    2.194979e-01    0.000e+00    1.333e-01    2.961e-08
+   15     137    1.173494e-01    0.000e+00    2.482e+04    1.562e-07
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 5 ended in 0.083 hours
+   23     211    2.194979e-01    0.000e+00    2.099e-01    2.719e-13
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 6 ended in 0.087 hours
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('distcomp.remoteparfor/getCompleteIntervals', '/usr/local/MATLAB/R2020b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m', 379)" style="font-weight:bold">distcomp.remoteparfor/getCompleteIntervals</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2020b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m',379,0)">line 379</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>distributed_execution', '/usr/local/MATLAB/R2020b/toolbox/matlab/lang/parallel_function.m', 741)" style="font-weight:bold">parallel_function>distributed_execution</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2020b/toolbox/matlab/lang/parallel_function.m',741,0)">line 741</a>)
+        [tags, out] = P.getCompleteIntervals(chunkSize);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function', '/usr/local/MATLAB/R2020b/toolbox/matlab/lang/parallel_function.m', 573)" style="font-weight:bold">parallel_function</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2020b/toolbox/matlab/lang/parallel_function.m',573,0)">line 573</a>)
+    R = distributed_execution(...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Iris_active', '/home/asixbabak/Dropbox (GaTech)/project-IrisBiomechanics/FE/Iris_active/Iris_active.m', 93)" style="font-weight:bold">Iris_active</a> (<a href="matlab: opentoline('/home/asixbabak/Dropbox (GaTech)/project-IrisBiomechanics/FE/Iris_active/Iris_active.m',93,0)">line 93</a>)
+parfor i=1:N
+} 

@@ -11,6 +11,7 @@ function [e_r_pupil,varargout] = FEBio_run_Iris_Active(x_par_normal,lb,ub,...
 %     E                 = Matrix modulus
 %     v                 = Matrix Poisson's ratio
 %     tau               = Matrix kinetics time-constant
+%     beta              = time constant power
 %     T_Sphicter        = Sphicter muscle stress as a function of time (in units of E)
 %     T_Diallator       = Diallator muscle stress as a function of time (in units of E)
 %
@@ -41,8 +42,9 @@ x(isnan(x)) = 0;%if any of the parameters is NaN make it zero/ this could happen
 E   = x(:,1);
 v   = x(:,2);
 tau = x(:,3);
-T_Sphicter  = x(:,4);
-T_Diallator = x(:,5);
+beta = x(:,4);
+T_Sphicter  = x(:,5);
+T_Diallator = x(:,6);
 
 iris_template = xml2struct('jobs/Iris_active_template.feb');
 iris = iris_template;
@@ -59,8 +61,8 @@ while rho_flag
     end
 end
 %% Control
-iris.febio_spec.Control.time_steps=sprintf('%d',max(time_resample)*10);
-iris.febio_spec.Control.step_size=sprintf('%d',.1);
+iris.febio_spec.Control.time_steps=sprintf('%d',max(time_resample));
+iris.febio_spec.Control.step_size=sprintf('%d',1);
 %% Material: Iris material
 % iris.febio_spec.Material.material.solid{1, 1}.kinetics = '1';
 % iris.febio_spec.Material.material.solid{1, 1}.trigger = '0';
@@ -79,9 +81,10 @@ iris.febio_spec.Material.material.solid{1, 1}.bond.Attributes.type='neo-Hookean'
 iris.febio_spec.Material.material.solid{1, 1}.bond.E.Text = sprintf('%.20f',E);
 iris.febio_spec.Material.material.solid{1, 1}.bond.v.Text = sprintf('%.20f',v);
 
-iris.febio_spec.Material.material.solid{1, 1}.relaxation.Attributes.type='relaxation-exponential';
+iris.febio_spec.Material.material.solid{1, 1}.relaxation = [];
+iris.febio_spec.Material.material.solid{1, 1}.relaxation.Attributes.type='relaxation-power';
 iris.febio_spec.Material.material.solid{1, 1}.relaxation.tau.Text=sprintf('%.20f',tau);
-
+iris.febio_spec.Material.material.solid{1, 1}.relaxation.beta.Text=sprintf('%.20f',beta);
 
 iris.febio_spec.Material.material.solid{1, 2}.T0.Attributes.type = 'math';
 % iris.febio_spec.Material.material.solid{1, 2}.T0.Text = '(1-H((X^2+Y^2)^.5-4))';
@@ -93,11 +96,14 @@ iris.febio_spec.Material.material.solid{1, 3}.T0.Text = '1';
 % circle.febio_spec.Output=[];
 % circle.febio_spec.Output.Attributes.from='output_format.feb';
 %% LoadData
+iris.febio_spec.LoadData.load_controller{1, 2}.points.point{1}.Text ...
+    = sprintf ('%.20f,%.20f',[.3,0]);
+
 iris.febio_spec.LoadData.load_controller{1, 2}.points.point{2}.Text ...
-    = sprintf ('%.20f,%.20f',[20,T_Sphicter]);
+    = sprintf ('%.20f,%.20f',[5.3,T_Sphicter]);
 
 iris.febio_spec.LoadData.load_controller{1, 3}.points.point{2}.Text ...
-       = sprintf ('%.20f,%.20f',[30,T_Diallator]);
+       = sprintf ('%.20f,%.20f',[15,T_Diallator]);
 %% Plot and log file setup (optional & done through the template)
 % <var type=?parameter[?fem.material[0].E?]=E?/>
 %% Write file
@@ -193,6 +199,13 @@ if strfind(scan_log{end-1},' N O R M A L   T E R M I N A T I O N')
     dia_pupil = 2*node_x(1,:);
     
     e_r_pupil = 1/2*((dia_pupil/(2*min(rho))).^2-1);%lagrangian strain of the pupil
+    
+    %FEBio has a bug that doesn't write the zero time into log file (im not
+    %sure if there is a way around it, but i deal with it like this)
+    if time(1) ~= 0
+        time = [0, time];
+        e_r_pupil = [0, e_r_pupil];
+    end
     e_r_pupil = interp1(time, e_r_pupil,time_resample,'pchip');    
 else
     dia_pupil   = time_resample-time_resample;
@@ -200,7 +213,7 @@ else
     e_r_pupil   = time_resample-time_resample;
     detail      = {};
 end
-
+    
 %% Clean up the mess
 if cleanup
     delete(uid_feb);delete(uid_log);delete(uid_xplt);
@@ -209,6 +222,7 @@ else
     movefile(uid_log,'Iris_active.log');
     movefile(uid_xplt,'Iris_active.xplt');
 end
+fclose('all');
 %% Outputs
 if nOutputs == 2
     varargout = cell(1,nOutputs-1);
