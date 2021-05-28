@@ -1,5 +1,5 @@
 function [e_r_pupil,varargout] = FEBio_run_Iris_Active(x_par_normal,lb,ub,...
-                                                       time_resample,varargin)
+                                                       load,step_size,varargin)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %This function reads the jobs/Iris_active.feb and makes
 %changes to it
@@ -18,7 +18,9 @@ function [e_r_pupil,varargout] = FEBio_run_Iris_Active(x_par_normal,lb,ub,...
 %     lb                = lower bound for parameters
 %     ub                = upper bound for parameters
 %
-%     time_resample     = Time (sec)
+%     load              = [Time (sec), T_s_lc, T_d_lc]; normalized load
+%     curve T_s_lc and  T_d_lc between 0 and 1
+%     step_size         = the size of time step (sec);
 %
 %     varargin{1}       = cleanup
 %     
@@ -46,6 +48,11 @@ beta = x(:,4);
 T_Sphicter  = x(:,5);
 T_Diallator = x(:,6);
 
+time_resample = load(1,1):step_size:load(end,1);
+if time_resample(end)~=load(end,1)
+    time_resample = [time_resample; load(end,1)];
+end
+
 iris_template = xml2struct('jobs/Iris_active_template.feb');
 iris = iris_template;
 %% Find the radial positions
@@ -61,17 +68,20 @@ while rho_flag
     end
 end
 %% Control
-iris.febio_spec.Control.time_steps=sprintf('%d',max(time_resample));
-iris.febio_spec.Control.step_size=sprintf('%d',1);
-%% Material: Iris material
-% iris.febio_spec.Material.material.solid{1, 1}.kinetics = '1';
-% iris.febio_spec.Material.material.solid{1, 1}.trigger = '0';
-% 
-% iris.febio_spec.Material.material.solid{1, 1} = ...
-%     rmfield(iris.febio_spec.Material.material.solid{1, 1},'E');
-% iris.febio_spec.Material.material.solid{1, 1} = ...
-%     rmfield(iris.febio_spec.Material.material.solid{1, 1},'v');
+iris.febio_spec.Control.time_steps=sprintf('%d',ceil(load(end,1)/step_size));
+iris.febio_spec.Control.step_size=sprintf('%d',step_size);
+iris.febio_spec.Control.time_stepper.dtmax=sprintf('%d',step_size);
+iris.febio_spec.Control.time_stepper.dtmin=sprintf('%d',step_size/3);
+%% Mesh
+iris.febio_spec.Mesh = [];
+iris.febio_spec.Mesh.Attributes.from='jobs/Iris_active_template.feb';
 
+iris.febio_spec.MeshDomains = [];
+iris.febio_spec.MeshDomains.Attributes.from='jobs/Iris_active_template.feb';
+
+iris.febio_spec.MeshData = [];
+iris.febio_spec.MeshData.Attributes.from='jobs/Iris_active_template.feb';
+%% Material: Iris material
 iris.febio_spec.Material.material.solid{1, 1}.Attributes.type='reactive viscoelastic';
 iris.febio_spec.Material.material.solid{1, 1}.elastic.Attributes.type='neo-Hookean';
 iris.febio_spec.Material.material.solid{1, 1}.elastic.E.Text = sprintf('%.20f',E);
@@ -87,28 +97,25 @@ iris.febio_spec.Material.material.solid{1, 1}.relaxation.tau.Text=sprintf('%.20f
 iris.febio_spec.Material.material.solid{1, 1}.relaxation.beta.Text=sprintf('%.20f',beta);
 
 iris.febio_spec.Material.material.solid{1, 2}.T0.Attributes.type = 'math';
-% iris.febio_spec.Material.material.solid{1, 2}.T0.Text = '(1-H((X^2+Y^2)^.5-4))';
-%r_s = 3.4; a_s = 1;
-iris.febio_spec.Material.material.solid{1, 2}.T0.Text = '(1-tanh(5*((X^2+Y^2)^.5-4.4)))*H((X^2+Y^2)^.5-3.4)';
 
-iris.febio_spec.Material.material.solid{1, 3}.T0.Text = '1';
+%r_s = 3.4; a_s = 1;
+iris.febio_spec.Material.material.solid{1, 2}.T0.Text = '1/2*(1-tanh(5*((X^2+Y^2)^.5-4.4)))*H((X^2+Y^2)^.5-3.4)';
 %% Output Logfile
 % circle.febio_spec.Output=[];
 % circle.febio_spec.Output.Attributes.from='output_format.feb';
 %% LoadData
-iris.febio_spec.LoadData.load_controller{1, 2}.points.point{1}.Text ...
-    = sprintf ('%.20f,%.20f',[.3,0]);
+for i=1:size(load,1)
+    iris.febio_spec.LoadData.load_controller{1, 1}.points.point{i}.Text ...
+        = sprintf ('%.20f,%.20f',[load(i,1),T_Sphicter * load(i,2)]);
 
-iris.febio_spec.LoadData.load_controller{1, 2}.points.point{2}.Text ...
-    = sprintf ('%.20f,%.20f',[5.3,T_Sphicter]);
-
-iris.febio_spec.LoadData.load_controller{1, 3}.points.point{2}.Text ...
-       = sprintf ('%.20f,%.20f',[15,T_Diallator]);
+    iris.febio_spec.LoadData.load_controller{1, 2}.points.point{i}.Text ...
+           = sprintf ('%.20f,%.20f',[load(i,1),T_Diallator * load(i,3)]);
+end
 %% Plot and log file setup (optional & done through the template)
 % <var type=?parameter[?fem.material[0].E?]=E?/>
 %% Write file
 uid = sprintf('%.0f',10^6*cputime);
-uid = uid(randperm(length(uid)));
+uid = [uid(randperm(length(uid))),uid(randperm(length(uid)))];
 uid_feb = [uid,'.feb'];
 uid_log = [uid,'.log'];
 uid_xplt = [uid,'.xplt'];
@@ -197,7 +204,6 @@ if strfind(scan_log{end-1},' N O R M A L   T E R M I N A T I O N')
     detail.rho = rho; %the radial distance of each element
         
     dia_pupil = 2*node_x(1,:);
-    
     e_r_pupil = 1/2*((dia_pupil/(2*min(rho))).^2-1);%lagrangian strain of the pupil
     
     %FEBio has a bug that doesn't write the zero time into log file (im not
@@ -206,7 +212,7 @@ if strfind(scan_log{end-1},' N O R M A L   T E R M I N A T I O N')
         time = [0, time];
         e_r_pupil = [0, e_r_pupil];
     end
-    e_r_pupil = interp1(time, e_r_pupil,time_resample,'pchip');    
+    e_r_pupil = interp1(time, e_r_pupil,time_resample,'linear');    
 else
     dia_pupil   = time_resample-time_resample;
     time        = time_resample-time_resample;
@@ -218,18 +224,23 @@ end
 if cleanup
     delete(uid_feb);delete(uid_log);delete(uid_xplt);
 else
-    movefile(uid_feb,'Iris_active.feb');
-    movefile(uid_log,'Iris_active.log');
-    movefile(uid_xplt,'Iris_active.xplt');
+    if isfile(uid_feb)
+        movefile(uid_feb,'Iris_active.feb');
+    end
+    if isfile(uid_log)
+        movefile(uid_log,'Iris_active.log');
+    end
+    if isfile(uid_xplt)
+        movefile(uid_xplt,'Iris_active.xplt');
+    end
 end
-fclose('all');
 %% Outputs
 if nOutputs == 2
     varargout = cell(1,nOutputs-1);
-    varargout{1} = time;
+    varargout{1} = time_resample;
 elseif nOutputs == 3
     varargout = cell(1,nOutputs-1);
-    varargout{1} = time;
+    varargout{1} = time_resample;
     varargout{2} = detail;  
 elseif nOutputs>2
     error('Too many output variables.')

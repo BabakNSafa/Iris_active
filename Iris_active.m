@@ -2,6 +2,10 @@ function Iris_active()
 %% Initialize
 clc
 close all
+
+if ~isfolder('temp')
+    mkdir 'temp'    
+end
 diary on
 
 fprintf('Active Iris Curve Fitting\nWritten by Babak N. Safa (Ethier Lab)\n')
@@ -9,7 +13,7 @@ fprintf('\nMatlab version \t %s \n\n',version)
 fprintf('Starting iris_active.m ...\n\n') 
 fprintf('%s\n',datetime)
 
-N = 10;
+N = 25;
 DataFit_Output.N = N;
 
 fprintf('Iris_active.m run, with grid size of N = %d \n',N)
@@ -27,145 +31,124 @@ if time(middle_index)<15
 end
 r_p_ref = mean(r_p(1:middle_index));
 
-raw = raw(middle_index+1:end,:);
-
-time = raw(:,1);
-time = time - time(1);
-r_p = raw(:,2);
 e_r = 1/2*((r_p/r_p_ref).^2-1);
 
-time_resampled = [linspace(0,2,30)';
-                  linspace(2,15,60)'];
-time_resampled = unique(time_resampled);
-
 %linear interpolation
-e_r_resampled = interp1(time,e_r,time_resampled,'linear','extrap');
- 
+index = (time>17)&(time<20);
+e_r_p_max_0 = mean(e_r(index));
+
+time_resampled = [0; 1];
+T_s_lc            = [0;1];
+T_d_lc            = [0;0];
+load = [time_resampled,T_s_lc,T_d_lc];
+step_size = .1; 
 figure
 hold on
 plot(time,e_r,'o')
-plot(time_resampled,e_r_resampled,'-*r')
+plot(time(index),e_r(index),'-*r')
 %% Define cost function
-%parameters v, tau (sec), beta, T_sphincter
-lb    = [1e-6, 1e-6,          1e-6,   1,       1e-6];
-ub    = [100, .49,           100,    100,       40];
+%parameters E, v, tau (sec), beta, T_sphincter T_dialator
+lb    = [0, 0, 1e-10,  2,  0,  0];
+ub    = [1, .49, 100, 100, 1, 1];
 
 if sum(ub<lb)>0
     error('The bounds do not match')
 end
 
-fun_par = @(x) [x , 0]; %set the matrix dialtor traction to zero
+fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),   0]; %set the time constat, beta, and dialtor traction to the minimum of lb
 
-DataFit_Output.par_name       = {'\nu','\tau1 (sec)','\tau2/\tau1','T_sphincter', 'T_diallator'};
-DataFit_Output.lb = fun_par(lb);
-DataFit_Output.ub = fun_par(ub);
+DataFit_Output.par_name       = {'E','\nu','\tau (sec)','\beta','T_sphincter', 'T_diallator'};
+DataFit_Output.lb = lb;
+DataFit_Output.ub = ub;
 
 cleanup = true;
-fun = @(x) sqrt(sum((FEBio_run_Iris_Active(fun_par(x),fun_par(lb),fun_par(ub),time_resampled,cleanup)-e_r_resampled).^2)/length(e_r_resampled));
-%% Test function
-E_test = 1;
-v_test = 0.4;
-tau_test = 1;
-beta_test = 5;
-T_s_test = 10;
 
-x_test = ([E_test, v_test, tau_test, beta_test, T_s_test]-lb)./(ub-lb);
+fun = @(x) sqrt((min(FEBio_run_Iris_Active(fun_par_normal(x),lb,ub,...
+    load,step_size,cleanup))-e_r_p_max_0).^2);
+%% Test function
+E_test      = .01;
+v_test      = 0.4;
+tau_test    = 100;
+beta_test   = 2; 
+T_s_test    = .01;
+T_d_test    = .02;
+
+x_test = [E_test, v_test, tau_test, beta_test T_s_test,T_d_test];
+temp = (x_test-lb)./(ub-lb);
+x_test_normal = fun_par_normal(temp([1,2,5])); 
+
 cleanup = false;
-test1 = FEBio_run_Iris_Active(fun_par(x_test),fun_par(lb),fun_par(ub),time_resampled,cleanup);
-test2 = fun(x_test);
-hold on
-plot(time_resampled,test1,'o-')
-if isempty(test1)||isempty(test2)
+
+e_r_test1 = FEBio_run_Iris_Active(x_test_normal,lb,ub,load,step_size,cleanup);
+test1 = sqrt((min(e_r_test1)-e_r_p_max_0).^2);
+test2 = fun(x_test_normal([1,2,5]));
+
+if isempty(test1)||isempty(test2)||abs(test1-test2)>1e-12
     error('FEBio test failed!')
 end
 %% Curvefitting
 s=rng('shuffle');%for reproducing the random number
 DataFit_Output.rand_state     = s;
-M_par_normal_master = lhsdesign(N,length(lb)); %the list of random guesses the values are picked from
+M_par_normal_master = lhsdesign(N,3); %the list of random guesses the values are picked from
 M_par_normal        = M_par_normal_master(1:N,:);
+lb_normal = zeros(1,size(M_par_normal,2));
+ub_normal = ones(1,size(M_par_normal,2));
 
 options = optimoptions(@fmincon,'Algorithm','interior-point',...
-                      'Display','Iter','StepTolerance',1e-20);
+                      'Display','Iter','DiffMinChange',.01,...
+                      'ObjectiveLimit',1e-5,'StepTolerance',1e-20);
 
 tmp_swap=[];
 fprintf('Optimization started ...\n')
 
-parfor i=1:N
+for i=1:N
     sprintf('Starting cycle number %d/%d',[i,N])
     tic
     x0_temp = M_par_normal(i,:);
 
     [x_fit,fval,exitflag,~,~,grad,hessian] = fmincon(fun,x0_temp,[],[],[],[],...
-            zeros(1,length(lb)),ones(1,length(ub)),[],options);
+            lb_normal,ub_normal,[],options);
 
     t_elapsed = toc;
     fprintf('Optimization for cycle %d ended in %.3f hours\n',[i, t_elapsed/3600])
     %% Evaluate the fit response
     cleanup     = false;
-    [e_r_fit, detail] = FEBio_run_Iris_Active(fun_par(x_fit),fun_par(lb),fun_par(ub),...
-                        time_resampled,cleanup);
+    [e_r_fit, detail] = FEBio_run_Iris_Active(fun_par_normal(x_fit),lb,ub,...
+                        load,step_size,cleanup);
     hold on
-    plot(time_resampled,e_r_fit,'-*b')
+    e_r_p_max = min(e_r_fit);
+    line([min(time),max(time)],e_r_p_max*[1,1])
 
-    RMSE_e_r    = sqrt(sum((e_r_fit-e_r_resampled).^2)/length(e_r_resampled));
+    RMSE_e_r    = fval;
 
     elapsed_time = toc
     
-    if ~isfolder('temp')
-        mkdir 'temp'    
+    pause(2)
+    if isfile('Iris_active.log')
+        movefile('Iris_active.log',sprintf('./temp/temp_%d_iris_active.log',i));
+    end
+    if isfile('Iris_active.feb')
+        movefile('Iris_active.feb',sprintf('./temp/temp_%d_iris_active.feb',i));
+    end
+    if isfile('Iris_active.xplt')
+        movefile('Iris_active.xplt',sprintf('./temp/temp_%d_iris_active.xplt',i));
     end
     
-    fclose 'all';
-    
-    movefile('Iris_active.log',sprintf('./temp/temp_%d_iris_active.log',i));
-    movefile('Iris_active.feb',sprintf('./temp/temp_%d_iris_active.feb',i));
-    movefile('Iris_active.xplt',sprintf('./temp/temp_%d_iris_active.xplt',i));
-    
     tmp_swap(i).elapsed_time   = elapsed_time;   
-    tmp_swap(i).x_par0         = fun_par(lb + x0_temp.*(ub-lb));
-    tmp_swap(i).x_fit          = fun_par(lb + x_fit.*(ub-lb));
+    tmp_swap(i).x_par0         = lb + fun_par_normal(x0_temp).*(ub-lb);
+    tmp_swap(i).x_fit          = lb + fun_par_normal(x_fit).*(ub-lb);
     tmp_swap(i).fval           = fval;
     tmp_swap(i).exitflag       = exitflag;
     tmp_swap(i).grad           = grad;
     tmp_swap(i).hessian        = hessian;
     tmp_swap(i).time           = time_resampled; 
     
-    tmp_swap(i).e_r_fit        = e_r_fit;
-    tmp_swap(i).e_r_0          = e_r_resampled;
+    tmp_swap(i).e_r_fit        = e_r_p_max;
+    tmp_swap(i).e_r_0          = e_r_p_max_0;
     tmp_swap(i).RMSE_e_r       = RMSE_e_r;
     
     tmp_swap(i).detail         = detail;
 end  
-% %% Plot the resultes
-% figure('Units','centimeters','WindowStyle','normal','Position',[1,1,25,8]);
-% 
-% subplot(1,2,1)
-% hold on
-% % plot(time,e_r,'ob')
-% plot(time_resampled,e_r_resampled,'-ob','linewidth',2)
-% plot(time_resampled,e_r_fit,'-*r','linewidth',2)
-% 
-% set(gca,'xlim',[0,Inf])
-% ylabel('Pupil diameter')
-% xlabel('Normalized Time')
-% set(gca,'FontName','Times','Fontsize',14)
-% 
-% subplot(1,2,2)
-% hold on
-% plot(time_resampled,T_s_fit,'-','linewidth',2)
-% set(gca,'xlim',[0,Inf],'ylim',[0,Inf])
-% 
-% ylabel('$T_s$','Interpreter','latex')
-% xlabel('Time')
-% 
-% yyaxis right
-% plot(time_resampled,T_d_fit,'-','linewidth',2)
-% ylabel('$T_d$','Interpreter','latex')
-% xlabel('Normalized Time')
-% set(gca,'xlim',[0,Inf],'ylim',[0,2])
-% 
-% legend({'Sphincter','Dillator'},'Interpreter','latex')
-% set(gca,'FontName','Times','Fontsize',14)
 %% Save Outputs
 DataFit_Output.active_iris = tmp_swap;
 
