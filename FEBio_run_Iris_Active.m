@@ -1,4 +1,4 @@
-function [e_r_pupil,varargout] = FEBio_run_Iris_Active(x_par_normal,lb,ub,...
+function [e_xx_spatial,varargout] = FEBio_run_Iris_Active(x_par_normal,lb,ub,...
                                                        load,step_size,varargin)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %This function reads the jobs/Iris_active.feb and makes
@@ -46,7 +46,8 @@ v   = x(:,2);
 tau = x(:,3);
 beta = x(:,4);
 T_Sphicter  = x(:,5);
-T_Diallator = x(:,6);
+a_Sphincter = x(:,6);
+T_Diallator = x(:,7);
 
 time_resample = load(1,1):step_size:load(end,1);
 if time_resample(end)~=load(end,1)
@@ -74,13 +75,13 @@ iris.febio_spec.Control.time_stepper.dtmax=sprintf('%d',step_size);
 iris.febio_spec.Control.time_stepper.dtmin=sprintf('%d',step_size/3);
 %% Mesh
 iris.febio_spec.Mesh = [];
-iris.febio_spec.Mesh.Attributes.from='jobs/Iris_active_template.feb';
-
 iris.febio_spec.MeshDomains = [];
-iris.febio_spec.MeshDomains.Attributes.from='jobs/Iris_active_template.feb';
-
 iris.febio_spec.MeshData = [];
+
+iris.febio_spec.Mesh.Attributes.from='jobs/Iris_active_template.feb';
+iris.febio_spec.MeshDomains.Attributes.from='jobs/Iris_active_template.feb';
 iris.febio_spec.MeshData.Attributes.from='jobs/Iris_active_template.feb';
+
 %% Material: Iris material
 iris.febio_spec.Material.material.solid{1, 1}.Attributes.type='reactive viscoelastic';
 iris.febio_spec.Material.material.solid{1, 1}.elastic.Attributes.type='neo-Hookean';
@@ -98,8 +99,8 @@ iris.febio_spec.Material.material.solid{1, 1}.relaxation.beta.Text=sprintf('%.20
 
 iris.febio_spec.Material.material.solid{1, 2}.T0.Attributes.type = 'math';
 
-%r_s = 3.4; a_s = 1;
-iris.febio_spec.Material.material.solid{1, 2}.T0.Text = '1/2*(1-tanh(5*((X^2+Y^2)^.5-4.4)))*H((X^2+Y^2)^.5-3.4)';
+%r_Sphincter = 3.4; a_Sphincter = 1;
+iris.febio_spec.Material.material.solid{1, 2}.T0.Text = sprintf('H(3.4+%f-(X^2+Y^2)^.5)',a_Sphincter);
 %% Output Logfile
 % circle.febio_spec.Output=[];
 % circle.febio_spec.Output.Attributes.from='output_format.feb';
@@ -206,6 +207,11 @@ if strfind(scan_log{end-1},' N O R M A L   T E R M I N A T I O N')
     dia_pupil = 2*node_x(1,:);
     e_r_pupil = 1/2*((dia_pupil/(2*min(rho))).^2-1);%lagrangian strain of the pupil
     
+    
+    x_spatial_element = element_x(1:(length(rho)-1),end);
+    e_xx_spatial_element = element_Ex(1:(length(rho)-1),end);
+    e_xx_spatial = interp1(x_spatial_element,e_xx_spatial_element,rho,'linear','extrap');
+ 
     %FEBio has a bug that doesn't write the zero time into log file (im not
     %sure if there is a way around it, but i deal with it like this)
     if time(1) ~= 0
@@ -217,6 +223,7 @@ else
     dia_pupil   = time_resample-time_resample;
     time        = time_resample-time_resample;
     e_r_pupil   = time_resample-time_resample;
+    e_xx_spatial = rho-rho;
     detail      = {};
 end
     

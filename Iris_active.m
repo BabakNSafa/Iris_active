@@ -1,7 +1,7 @@
 function Iris_active()
 %% Initialize
 clc
-close all
+% close all
 
 if ~isfolder('temp')
     mkdir 'temp'    
@@ -20,68 +20,93 @@ fprintf('Iris_active.m run, with grid size of N = %d \n',N)
 
 DataFit_Output.Start_date = datetime('now');
 %% Read experimental data
-raw = csvread('Iris_seg_summary.csv');
+    %% Seg
+    raw_seg = csvread('Iris_seg_summary.csv');
 
-time = raw(:,1);
-r_p = raw(:,2);
+    time = raw_seg(:,1);
+    r_p = raw_seg(:,2);
 
-[~, middle_index ] = min(abs(time-15));
-if time(middle_index)<15
-    middle_index = middle_index-1;
-end
-r_p_ref = mean(r_p(1:middle_index));
+    [~, middle_index ] = min(abs(time-15));
+    if time(middle_index)<15
+        middle_index = middle_index-1;
+    end
+    r_p_ref = mean(r_p(1:middle_index));
 
-e_r = 1/2*((r_p/r_p_ref).^2-1);
+    e_r = 1/2*((r_p/r_p_ref).^2-1);
 
-%linear interpolation
-index = (time>17)&(time<20);
-e_r_p_max_0 = mean(e_r(index));
+    %linear interpolation
+    index = (time>17)&(time<20);
+    e_r_p_max_0 = mean(e_r(index));
 
-time_resampled = [0; 1];
-T_s_lc            = [0;1];
-T_d_lc            = [0;0];
-load = [time_resampled,T_s_lc,T_d_lc];
-step_size = .1; 
-figure
-hold on
-plot(time,e_r,'o')
-plot(time(index),e_r(index),'-*r')
+    time_resampled = [0; 1];
+    T_s_lc            = [0;1];
+    T_d_lc            = [0;0];
+    load = [time_resampled,T_s_lc,T_d_lc];
+    step_size = .1; 
+    figure
+    hold on
+    plot(time,e_r,'o')
+    plot(time(index),e_r(index),'-*r')
+    %% DIC
+    raw_seg = csvread('Iris_DIC_summary.csv');
+
 %% Define cost function
-%parameters E, v, tau (sec), beta, T_sphincter T_dialator
-lb    = [0, 0, 1e-10,  2,  0,  0];
-ub    = [1, .49, 100, 100, 1, 1];
+%parameters E, v, tau (sec), beta, T_sphincter, a_sphincter T_dialator
+lb    = [0, .489, 1e-10,  2,  0, .1,  0];
+ub    = [1, .49, 100, 100, 1, 2, 1];
 
 if sum(ub<lb)>0
     error('The bounds do not match')
 end
 
-fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),   0]; %set the time constat, beta, and dialtor traction to the minimum of lb
+fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),  x(4), 0]; %set the time constat, beta, and dialtor traction to the minimum of lb
 
-DataFit_Output.par_name       = {'E','\nu','\tau (sec)','\beta','T_sphincter', 'T_diallator'};
+DataFit_Output.par_name       = {'E','\nu','\tau (sec)','\beta','T_sphincter', 'a_sphincter', 'T_diallator'};
 DataFit_Output.lb = lb;
 DataFit_Output.ub = ub;
 
-cleanup = true;
-
-fun = @(x) sqrt((min(FEBio_run_Iris_Active(fun_par_normal(x),lb,ub,...
-    load,step_size,cleanup))-e_r_p_max_0).^2);
-%% Test function
+%% Define the objective function
+    %% parameters for testing
 E_test      = .01;
 v_test      = 0.4;
 tau_test    = 100;
 beta_test   = 2; 
 T_s_test    = .01;
+a_s_test    = 1;
 T_d_test    = .02;
 
-x_test = [E_test, v_test, tau_test, beta_test T_s_test,T_d_test];
+x_test = [E_test, v_test, tau_test, beta_test T_s_test, a_s_test, T_d_test];
 temp = (x_test-lb)./(ub-lb);
-x_test_normal = fun_par_normal(temp([1,2,5])); 
+x_test_normal = fun_par_normal(temp([1,2,5,6])); 
+cleanup = true;
+[e_r_test1, ~, detail] = FEBio_run_Iris_Active(x_test_normal,lb,ub,load,step_size,cleanup);
+rho = detail.rho;
 
-cleanup = false;
+    %% Definitions go in here
+cleanup = true;
 
-e_r_test1 = FEBio_run_Iris_Active(x_test_normal,lb,ub,load,step_size,cleanup);
-test1 = sqrt((min(e_r_test1)-e_r_p_max_0).^2);
-test2 = fun(x_test_normal([1,2,5]));
+%Fit only maximum constriction pupil strain
+% fun = @(x) sqrt((min(FEBio_run_Iris_Active(fun_par_normal(x),lb,ub,...
+%     load,step_size,cleanup))-e_r_p_max_0).^2);
+
+%Fit spatial distribution of e_xx at maximum constriction pupil strain
+%along nasotemporal axis
+    omitnan = 1;
+    figure
+    %the zero x_normalized_from_DIC is right on the edge of the pupil and 1
+    %is at the limbus
+    [rho_normalized_from_DIC, e_xx_from_DIC] = plot_ci(raw_seg(:,1),raw_seg(:,2:end),'blue',omitnan);
+    e_xx_0 = interp1(rho_normalized_from_DIC(~isnan(e_xx_from_DIC)), e_xx_from_DIC(~isnan(e_xx_from_DIC)),...
+        (rho-rho(1))/(max(rho)-min(rho)),'linear','extrap');
+    hold on
+    plot((rho-rho(1))/(max(rho)-min(rho)), e_xx_0,'o-r')
+    
+fun = @(x) sqrt(sum((FEBio_run_Iris_Active(fun_par_normal(x),lb,ub,...
+    load,step_size,cleanup)-e_xx_0).^2)/length(e_xx_0));
+
+    %% run tests
+test1 = sqrt(sum((e_r_test1-e_xx_0).^2)/length(e_xx_0));
+test2 = fun(x_test_normal([1,2,5,6]));
 
 if isempty(test1)||isempty(test2)||abs(test1-test2)>1e-12
     error('FEBio test failed!')
@@ -89,7 +114,7 @@ end
 %% Curvefitting
 s=rng('shuffle');%for reproducing the random number
 DataFit_Output.rand_state     = s;
-M_par_normal_master = lhsdesign(N,3); %the list of random guesses the values are picked from
+M_par_normal_master = lhsdesign(N,4); %the list of random guesses the values are picked from
 M_par_normal        = M_par_normal_master(1:N,:);
 lb_normal = zeros(1,size(M_par_normal,2));
 ub_normal = ones(1,size(M_par_normal,2));
@@ -113,11 +138,9 @@ for i=1:N
     fprintf('Optimization for cycle %d ended in %.3f hours\n',[i, t_elapsed/3600])
     %% Evaluate the fit response
     cleanup     = false;
-    [e_r_fit, detail] = FEBio_run_Iris_Active(fun_par_normal(x_fit),lb,ub,...
+    [e_xx_fit, ~, detail] = FEBio_run_Iris_Active(fun_par_normal(x_fit),lb,ub,...
                         load,step_size,cleanup);
-    hold on
-    e_r_p_max = min(e_r_fit);
-    line([min(time),max(time)],e_r_p_max*[1,1])
+    hold on; plot((detail.rho-detail.rho(1))/(max(detail.rho)-min(detail.rho)),e_xx_fit,'o-g')
 
     RMSE_e_r    = fval;
 
@@ -143,8 +166,8 @@ for i=1:N
     tmp_swap(i).hessian        = hessian;
     tmp_swap(i).time           = time_resampled; 
     
-    tmp_swap(i).e_r_fit        = e_r_p_max;
-    tmp_swap(i).e_r_0          = e_r_p_max_0;
+    tmp_swap(i).e_xx_fit        = e_xx_fit;
+    tmp_swap(i).e_xx_0          = e_xx_0;
     tmp_swap(i).RMSE_e_r       = RMSE_e_r;
     
     tmp_swap(i).detail         = detail;
