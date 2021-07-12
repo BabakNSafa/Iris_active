@@ -6695,7 +6695,7 @@
 			<dofs>z</dofs>
 		</bc>
 		<bc name="FixedDisplacement2" type="fix" node_set="@surface:FixedDisplacement2">
-			<dofs>x,y,z</dofs>
+			<dofs>x,y</dofs>
 		</bc>
 		<bc name="FixedDisplacement3" type="fix" node_set="@surface:FixedDisplacement3">
 			<dofs>y</dofs>

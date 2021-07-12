@@ -52,7 +52,7 @@ DataFit_Output.Start_date = datetime('now');
 
 %% Define cost function
 %parameters E, v, tau (sec), beta, T_sphincter, a_sphincter T_dialator
-lb    = [0, .489, 1e-10,  2,  0, .1,  0];
+lb    = [0, 0, 1e-10,  2,  0, .1,  0];
 ub    = [1, .49, 100, 100, 1, 2, 1];
 
 if sum(ub<lb)>0
@@ -140,7 +140,10 @@ for i=1:N
     cleanup     = false;
     [e_xx_fit, ~, detail] = FEBio_run_Iris_Active(fun_par_normal(x_fit),lb,ub,...
                         load,step_size,cleanup);
-    hold on; plot((detail.rho-detail.rho(1))/(max(detail.rho)-min(detail.rho)),e_xx_fit,'o-g')
+    figure
+    hold on;
+    plot((detail.rho-detail.rho(1))/(max(detail.rho)-min(detail.rho)),e_xx_0,'o-k');
+    plot((detail.rho-detail.rho(1))/(max(detail.rho)-min(detail.rho)),e_xx_fit,'o-g')
 
     RMSE_e_r    = fval;
 
