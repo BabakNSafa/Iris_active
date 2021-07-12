@@ -40,12 +40,12 @@
             <kinetics>1</kinetics>
             <trigger>0</trigger>
             <elastic type="neo-Hookean">
-               <E>0.10277756183660574640</E>
-               <v>0.48948677516941113685</v>
+               <E>0.20890301782713285861</E>
+               <v>0.41470873702602806254</v>
             </elastic>
             <bond type="neo-Hookean">
-               <E>0.10277756183660574640</E>
-               <v>0.48948677516941113685</v>
+               <E>0.20890301782713285861</E>
+               <v>0.41470873702602806254</v>
             </bond>
             <relaxation type="relaxation-power">
                <tau>0.00000000010000000000</tau>
@@ -53,7 +53,7 @@
             </relaxation>
          </solid>
          <solid type="prescribed uniaxial active contraction">
-            <T0 lc="1" type="math">H(3.4+1.146570-(X^2+Y^2)^.5)</T0>
+            <T0 lc="1" type="math">H(3.4+1.280000-(X^2+Y^2)^.5)</T0>
             <mat_axis type="vector">
                <a>0,1,0</a>
                <d>0,1,0</d>
@@ -90,7 +90,7 @@
          <interpolate>LINEAR</interpolate>
          <points>
             <point>0.00000000000000000000,0.00000000000000000000</point>
-            <point>1.00000000000000000000,0.64554644424718232720</point>
+            <point>1.00000000000000000000,0.99937822184024338590</point>
          </points>
       </load_controller>
       <load_controller id="2" type="loadcurve">

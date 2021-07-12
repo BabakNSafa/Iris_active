@@ -52,14 +52,15 @@ DataFit_Output.Start_date = datetime('now');
 
 %% Define cost function
 %parameters E, v, tau (sec), beta, T_sphincter, a_sphincter T_dialator
-lb    = [0, .489, 1e-10,  2,  0, .1,  0];
+lb    = [0, 0, 1e-10,  2,  0, .1,  0];
 ub    = [1, .49, 100, 100, 1, 2, 1];
 
 if sum(ub<lb)>0
     error('The bounds do not match')
 end
 
-fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),  x(4), 0]; %set the time constat, beta, and dialtor traction to the minimum of lb
+fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),  (1.28-lb(6))/(ub(6)-lb(6)), 0]; %set the time constat, beta, and dialtor traction to the minimum of lb
+%set the sphincter width to 1.28 after 10.1371/journal.pone.0194141
 
 DataFit_Output.par_name       = {'E','\nu','\tau (sec)','\beta','T_sphincter', 'a_sphincter', 'T_diallator'};
 DataFit_Output.lb = lb;
@@ -72,12 +73,12 @@ v_test      = 0.4;
 tau_test    = 100;
 beta_test   = 2; 
 T_s_test    = .01;
-a_s_test    = 1;
+a_s_test    = 1.28;
 T_d_test    = .02;
 
 x_test = [E_test, v_test, tau_test, beta_test T_s_test, a_s_test, T_d_test];
 temp = (x_test-lb)./(ub-lb);
-x_test_normal = fun_par_normal(temp([1,2,5,6])); 
+x_test_normal = fun_par_normal(temp([1,2,5])); 
 cleanup = true;
 [e_r_test1, ~, detail] = FEBio_run_Iris_Active(x_test_normal,lb,ub,load,step_size,cleanup);
 rho = detail.rho;
@@ -86,27 +87,12 @@ rho = detail.rho;
 cleanup = true;
 
 %Fit only maximum constriction pupil strain
-% fun = @(x) sqrt((min(FEBio_run_Iris_Active(fun_par_normal(x),lb,ub,...
-%     load,step_size,cleanup))-e_r_p_max_0).^2);
-
-%Fit spatial distribution of e_xx at maximum constriction pupil strain
-%along nasotemporal axis
-    omitnan = 1;
-    figure
-    %the zero x_normalized_from_DIC is right on the edge of the pupil and 1
-    %is at the limbus
-    [rho_normalized_from_DIC, e_xx_from_DIC] = plot_ci(raw_seg(:,1),raw_seg(:,2:end),'blue',omitnan);
-    e_xx_0 = interp1(rho_normalized_from_DIC(~isnan(e_xx_from_DIC)), e_xx_from_DIC(~isnan(e_xx_from_DIC)),...
-        (rho-rho(1))/(max(rho)-min(rho)),'linear','extrap');
-    hold on
-    plot((rho-rho(1))/(max(rho)-min(rho)), e_xx_0,'o-r')
-    
-fun = @(x) sqrt(sum((FEBio_run_Iris_Active(fun_par_normal(x),lb,ub,...
-    load,step_size,cleanup)-e_xx_0).^2)/length(e_xx_0));
+fun = @(x) sqrt((min(FEBio_run_Iris_Active(fun_par_normal(x),lb,ub,...
+    load,step_size,cleanup))-e_r_p_max_0).^2);
 
     %% run tests
-test1 = sqrt(sum((e_r_test1-e_xx_0).^2)/length(e_xx_0));
-test2 = fun(x_test_normal([1,2,5,6]));
+test1 = sqrt(sum((min(e_r_test1)-e_r_p_max_0).^2)/length(e_r_p_max_0));
+test2 = fun(x_test_normal([1,2,5]));
 
 if isempty(test1)||isempty(test2)||abs(test1-test2)>1e-12
     error('FEBio test failed!')
@@ -114,7 +100,7 @@ end
 %% Curvefitting
 s=rng('shuffle');%for reproducing the random number
 DataFit_Output.rand_state     = s;
-M_par_normal_master = lhsdesign(N,4); %the list of random guesses the values are picked from
+M_par_normal_master = lhsdesign(N,3); %the list of random guesses the values are picked from
 M_par_normal        = M_par_normal_master(1:N,:);
 lb_normal = zeros(1,size(M_par_normal,2));
 ub_normal = ones(1,size(M_par_normal,2));
@@ -138,9 +124,8 @@ for i=1:N
     fprintf('Optimization for cycle %d ended in %.3f hours\n',[i, t_elapsed/3600])
     %% Evaluate the fit response
     cleanup     = false;
-    [e_xx_fit, ~, detail] = FEBio_run_Iris_Active(fun_par_normal(x_fit),lb,ub,...
+    [e_r_p_max_fit, ~, detail] = FEBio_run_Iris_Active(fun_par_normal(x_fit),lb,ub,...
                         load,step_size,cleanup);
-    hold on; plot((detail.rho-detail.rho(1))/(max(detail.rho)-min(detail.rho)),e_xx_fit,'o-g')
 
     RMSE_e_r    = fval;
 
@@ -166,8 +151,8 @@ for i=1:N
     tmp_swap(i).hessian        = hessian;
     tmp_swap(i).time           = time_resampled; 
     
-    tmp_swap(i).e_xx_fit        = e_xx_fit;
-    tmp_swap(i).e_xx_0          = e_xx_0;
+    tmp_swap(i).e_r_p_max_fit  = e_r_p_max_fit;
+    tmp_swap(i).e_r_p_max_0    = e_r_p_max_0;
     tmp_swap(i).RMSE_e_r       = RMSE_e_r;
     
     tmp_swap(i).detail         = detail;
