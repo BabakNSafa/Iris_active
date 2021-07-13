@@ -51,7 +51,7 @@ DataFit_Output.Start_date = datetime('now');
     raw_seg = csvread('Iris_DIC_summary.csv');
 
 %% Define cost function
-%parameters E, v, tau (sec), beta, T_sphincter, a_sphincter T_dialator
+%parameters E (MPa), v, tau (sec), beta, T_sphincter(MPa), a_sphincter(mm) T_dialator(MPa)
 lb    = [0, 0, 1e-10,  2,  0, .1,  0];
 ub    = [1, .49, 100, 100, 1, 2, 1];
 
