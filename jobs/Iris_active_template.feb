@@ -6730,7 +6730,7 @@
 			<var type="parameter['fem.material[0].solid[2].T0']=T_dialator"/>
 		</plotfile>
 		<logfile>
-			<element_data data="x;y;z;sx;sy;sz;Ex;Ey;Ez"/>
+			<element_data data="x;y;z;sx;sy;sz;sxy;syz;sxz;Ex;Ey;Ez;Exy;Eyz;Exz"/>
 			<node_data data="x;y;z;ux;uy;uz"/>
 		</logfile>
 	</Output>

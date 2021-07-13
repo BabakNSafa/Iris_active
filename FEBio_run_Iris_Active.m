@@ -149,7 +149,7 @@ if strfind(scan_log{end-1},' N O R M A L   T E R M I N A T I O N')
             num_node = sscanf(scan_log{i-1},'	Number of nodes ................................ : %f');                      
             num_elem = sscanf(scan_log{i},'	Number of solid elements ....................... : %f');
         end
-        if strfind(scan_log{i},'Data = x;y;z;sx;sy;sz;Ex;Ey')
+        if strfind(scan_log{i},'Data = x;y;z;sx;sy;sz;sxy;syz;sxz;Ex;Ey;Ez;Exy;Eyz;Exz')
             time(kk) = sscanf(scan_log{i-1},'Time = %f');                            
              for j = 1:num_elem           
                 temp = sscanf(scan_log{i+j},'%d %f %f %f %f %f %f %f %f %f');
@@ -161,9 +161,17 @@ if strfind(scan_log{end-1},' N O R M A L   T E R M I N A T I O N')
                     element_sy(j,kk)  = temp(6);                
                     element_sz(j,kk)  = temp(7);
                     
-                    element_Ex(j,kk)  = temp(8); 
-                    element_Ey(j,kk)  = temp(9);                
-                    element_Ez(j,kk)  = temp(10); 
+                    element_sxy(j,kk)  = temp(8); 
+                    element_syz(j,kk)  = temp(9);                
+                    element_sxz(j,kk)  = temp(10);
+                    
+                    element_Ex(j,kk)  = temp(11); 
+                    element_Ey(j,kk)  = temp(12);                
+                    element_Ez(j,kk)  = temp(13); 
+                    
+                    element_Exy(j,kk)  = temp(14); 
+                    element_Eyz(j,kk)  = temp(15);                
+                    element_Exz(j,kk)  = temp(16);                     
                     
              end
             for jj = 1:num_node           
@@ -190,9 +198,17 @@ if strfind(scan_log{end-1},' N O R M A L   T E R M I N A T I O N')
     detail.element_sy = element_sy;
     detail.element_sz = element_sz;
 
+    detail.element_sxy = element_sxy;
+    detail.element_syz = element_syz;
+    detail.element_sxz = element_sxz;
+    
     detail.element_Ex = element_Ex;
     detail.element_Ey = element_Ey;
     detail.element_Ez = element_Ez;
+    
+    detail.element_Exy = element_Exy;
+    detail.element_Eyz = element_Eyz;
+    detail.element_Exz = element_Exz;
     
     detail.node_x = node_x;
     detail.node_y = node_y;
