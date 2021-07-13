@@ -38,9 +38,9 @@ DataFit_Output.Start_date = datetime('now');
     index = (time>17)&(time<20);
     e_r_p_max_0 = mean(e_r(index));
 
-    time_resampled = [0; 1];
-    T_s_lc            = [0;1];
-    T_d_lc            = [0;0];
+    time_resampled = [0;.1; 1];% the .1 step is added to make sure the reference state of elements is logged in the log file
+    T_s_lc            = [0;0;1];
+    T_d_lc            = [0;0;0];
     load = [time_resampled,T_s_lc,T_d_lc];
     step_size = .1; 
     figure

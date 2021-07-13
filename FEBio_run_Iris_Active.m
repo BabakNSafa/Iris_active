@@ -224,10 +224,6 @@ if strfind(scan_log{end-1},' N O R M A L   T E R M I N A T I O N')
     e_r_pupil = 1/2*((dia_pupil/(2*min(rho))).^2-1);%lagrangian strain of the pupil
     
     
-    x_spatial_element = element_x(1:(length(rho)-1),end);
-    e_xx_spatial_element = element_Ex(1:(length(rho)-1),end);
-    e_xx_spatial = interp1(x_spatial_element,e_xx_spatial_element,rho,'linear','extrap');
- 
     %FEBio has a bug that doesn't write the zero time into log file (im not
     %sure if there is a way around it, but i deal with it like this)
     if time(1) ~= 0
@@ -239,7 +235,6 @@ else
     dia_pupil   = time_resample-time_resample;
     time        = time_resample-time_resample;
     e_r_pupil   = time_resample-time_resample;
-    e_xx_spatial = rho-rho;
     detail      = {};
 end
     
