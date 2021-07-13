@@ -152,7 +152,7 @@ if strfind(scan_log{end-1},' N O R M A L   T E R M I N A T I O N')
         if strfind(scan_log{i},'Data = x;y;z;sx;sy;sz;sxy;syz;sxz;Ex;Ey;Ez;Exy;Eyz;Exz')
             time(kk) = sscanf(scan_log{i-1},'Time = %f');                            
              for j = 1:num_elem           
-                temp = sscanf(scan_log{i+j},'%d %f %f %f %f %f %f %f %f %f');
+                temp = sscanf(scan_log{i+j},'%d %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f');
                     element_x(j,kk)  = temp(2);
                     element_y(j,kk)  = temp(3);                
                     element_z(j,kk)  = temp(4); 
