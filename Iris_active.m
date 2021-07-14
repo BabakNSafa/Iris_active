@@ -1,7 +1,8 @@
 function Iris_active()
 %% Initialize
 clc
-% close all
+close all
+parpool('local',24)
 
 if ~isfolder('temp')
     mkdir 'temp'    
@@ -25,11 +26,6 @@ DataFit_Output.Start_date = datetime('now');
 
     time = raw_seg.Time_sec_;
     e_r_p = raw_seg.e_pupil;
-
-    [~, middle_index ] = min(abs(time-15));
-    if time(middle_index)<15
-        middle_index = middle_index-1;
-    end
 
     %linear interpolation
     index = (time>17)&(time<20);
