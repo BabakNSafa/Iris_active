@@ -57,21 +57,21 @@ end
 fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),  (1.28-lb(6))/(ub(6)-lb(6)), 0]; %set the time constat, beta, and dialtor traction to the minimum of lb
 
 
-%in the variable names I have kept the usual FEBio units when using mm as dimension, which are based
-%on mm, MPa and sec
+%in the variable names I have kept the default FEBio units, which are based
+%on mm, MPa and se
 DataFit_Output.par_name       = {'E (MPa)','\nu','\tau (sec)','\beta','T_sphincter(MPa)', 'a_sphincter (mm)', 'T_diallator(MPa)'};
 DataFit_Output.lb = lb;
 DataFit_Output.ub = ub;
 
 %% Define the objective function
     %% parameters for testing
-E_test      = .01;% in MPa, which is equivalent of 10 kPa
+E_test      = .01;
 v_test      = 0.4;
-tau_test    = 100;%in sec
+tau_test    = 100;
 beta_test   = 2; 
-T_s_test    = .01;% in MPa, which is equivalent of 10 kPa
-a_s_test    = 1.28;% in mm
-T_d_test    = .02;% in MPa, which is equivalent of 20 kPa
+T_s_test    = .01;
+a_s_test    = 1.28;
+T_d_test    = .02;
 
 x_test = [E_test, v_test, tau_test, beta_test T_s_test, a_s_test, T_d_test];
 temp = (x_test-lb)./(ub-lb);
