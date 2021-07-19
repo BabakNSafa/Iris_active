@@ -99,8 +99,7 @@ iris.febio_spec.Material.material.solid{1, 1}.relaxation.beta.Text=sprintf('%.20
 
 iris.febio_spec.Material.material.solid{1, 2}.T0.Attributes.type = 'math';
 
-%r_Sphincter = 3.4; a_Sphincter = 1;
-iris.febio_spec.Material.material.solid{1, 2}.T0.Text = sprintf('H(3.4+%f-(X^2+Y^2)^.5)',a_Sphincter);
+iris.febio_spec.Material.material.solid{1, 2}.T0.Text = sprintf('step(%f+%f-(X^2+Y^2)^.5)',[min(rho),a_Sphincter]);
 %% Output Logfile
 % circle.febio_spec.Output=[];
 % circle.febio_spec.Output.Attributes.from='output_format.feb';
