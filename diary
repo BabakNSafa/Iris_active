@@ -722,3 +722,20 @@ satisfied to within the value of the constraint tolerance.
 Optimization for cycle 24 ended in 0.446 hours
 14-Jul-2021 12:02:28 
 Analyses concluded! 
+Active Iris Curve Fitting
+Written by Babak N. Safa (Ethier Lab)
+
+Matlab version 	 9.7.0.1190202 (R2019b) 
+
+Starting iris_active.m ...
+
+14-Jul-2021 16:01:08
+Iris_active.m run, with grid size of N = 25 
+<a href="matlab: opentoline('C:\Users\bsafa3\Dropbox (GaTech)\project-IrisBiomechanics\FE\Iris_active\FEBio_run_Iris_Active.m',107,1)">107 </a>for i=1:size(load,1)
+sprintf('step(%f+%f-(X^2+Y^2)^.5)',[min(rho),a_Sphincter])
+
+ans =
+
+    'step(3.400000+1.280000-(X^2+Y^2)^.5)'
+
+if system_dependent('IsDebugMode')==1, dbquit; end

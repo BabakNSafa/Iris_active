@@ -2,7 +2,7 @@ function Iris_active()
 %% Initialize
 clc
 close all
-parpool('local',24)
+% parpool('local',24)
 
 if ~isfolder('temp')
     mkdir 'temp'    
@@ -49,8 +49,10 @@ if sum(ub<lb)>0
     error('The bounds do not match')
 end
 
-%set the sphincter width to 1.28 after 10.1371/journal.pone.0194141
-fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),  (1.28-lb(6))/(ub(6)-lb(6)), 0]; %set the time constat, beta, and dialtor traction to the minimum of lb
+%set the sphincter width to 1 as trypical value for sphincter (see
+%/home/asixbabak/Dropbox (GaTech)/project-IrisBiomechanics/Iris sphincter
+%dimension estimation from literature)
+fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),  (1-lb(6))/(ub(6)-lb(6)), 0]; %set the time constat, beta, and dialtor traction to the minimum of lb
 
 
 %in the variable names I have kept the usual FEBio units when using mm as dimension, which are based
@@ -66,7 +68,7 @@ v_test      = 0.4;
 tau_test    = 100;%in sec
 beta_test   = 2; 
 T_s_test    = .01;% in MPa, which is equivalent of 10 kPa
-a_s_test    = 1.28;% in mm
+a_s_test    = 1;% in mm
 T_d_test    = .02;% in MPa, which is equivalent of 20 kPa
 
 x_test = [E_test, v_test, tau_test, beta_test T_s_test, a_s_test, T_d_test];
