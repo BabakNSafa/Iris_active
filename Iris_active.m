@@ -14,7 +14,7 @@ fprintf('\nMatlab version \t %s \n\n',version)
 fprintf('Starting iris_active.m ...\n\n') 
 fprintf('%s\n',datetime)
 
-N = 25;
+N = 250;
 DataFit_Output.N = N;
 
 fprintf('Iris_active.m run, with grid size of N = %d \n',N)
