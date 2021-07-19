@@ -2,7 +2,7 @@ function Iris_active()
 %% Initialize
 clc
 close all
-% parpool('local',24)
+parpool('local',24)
 
 if ~isfolder('temp')
     mkdir 'temp'    
