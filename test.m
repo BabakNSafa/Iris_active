@@ -1,6 +1,3 @@
-x = 0:.1:6;
-a_s = 1;
-r_s = 3.4;
-scale = 5;
-figure
-plot(x,1/2*(1-tanh((x-(r_s+a_s))*scale)).*(x>r_s))
+version https://git-lfs.github.com/spec/v1
+oid sha256:2ef54b45cd7defc70b343e763f71476722e5ad3819549c70cb3a379bfd09b3fc
+size 105

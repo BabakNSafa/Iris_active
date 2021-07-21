@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<febio_spec version="3.0">
+   <Module type="solid"/>
+   <Control>
+      <analysis>STATIC</analysis>
+      <time_steps>10</time_steps>
+      <step_size>1.000000e-01</step_size>
+      <solver>
+         <max_refs>15</max_refs>
+         <max_ups>10</max_ups>
+         <diverge_reform>1</diverge_reform>
+         <reform_each_time_step>1</reform_each_time_step>
+         <dtol>0.001</dtol>
+         <etol>0.01</etol>
+         <rtol>0</rtol>
+         <lstol>0.9</lstol>
+         <min_residual>1e-20</min_residual>
+         <qnmethod>BFGS</qnmethod>
+         <rhoi>0</rhoi>
+      </solver>
+      <time_stepper>
+         <dtmin>3.333333e-02</dtmin>
+         <dtmax>1.000000e-01</dtmax>
+         <max_retries>10</max_retries>
+         <opt_iter>10</opt_iter>
+      </time_stepper>
+   </Control>
+   <Globals>
+      <Constants>
+         <T>0</T>
+         <R>0</R>
+         <Fc>0</Fc>
+      </Constants>
+   </Globals>
+   <Material>
+      <material id="1" name="Material1" type="solid mixture">
+         <density>1</density>
+         <solid type="reactive viscoelastic">
+            <density>1</density>
+            <kinetics>1</kinetics>
+            <trigger>0</trigger>
+            <elastic type="neo-Hookean">
+               <E>0.10136590953224827727</E>
+               <v>0.26349902667600338946</v>
+            </elastic>
+            <bond type="neo-Hookean">
+               <E>0.10136590953224827727</E>
+               <v>0.26349902667600338946</v>
+            </bond>
+            <relaxation type="relaxation-power">
+               <tau>0.00000000010000000000</tau>
+               <beta>2.00000000000000000000</beta>
+            </relaxation>
+         </solid>
+         <solid type="prescribed uniaxial active contraction">
+            <T0 lc="1" type="math">step(3.400000+1.000000-(X^2+Y^2)^.5)</T0>
+            <mat_axis type="vector">
+               <a>0,1,0</a>
+               <d>0,1,0</d>
+            </mat_axis>
+         </solid>
+         <solid type="prescribed uniaxial active contraction">
+            <T0 lc="2">0</T0>
+            <mat_axis type="vector">
+               <a>1,0,0</a>
+               <d>0,1,0</d>
+            </mat_axis>
+         </solid>
+      </material>
+   </Material>
+   <Mesh from="jobs/Iris_active_template.feb"/>
+   <MeshDomains from="jobs/Iris_active_template.feb"/>
+   <MeshData from="jobs/Iris_active_template.feb"/>
+   <Boundary>
+      <bc name="FixedDisplacement1" node_set="@surface:FixedDisplacement1" type="fix">
+         <dofs>z</dofs>
+      </bc>
+      <bc name="FixedDisplacement2" node_set="@surface:FixedDisplacement2" type="fix">
+         <dofs>x,y</dofs>
+      </bc>
+      <bc name="FixedDisplacement3" node_set="@surface:FixedDisplacement3" type="fix">
+         <dofs>y</dofs>
+      </bc>
+      <bc name="FixedDisplacement4" node_set="@surface:FixedDisplacement4" type="fix">
+         <dofs>x</dofs>
+      </bc>
+   </Boundary>
+   <LoadData>
+      <load_controller id="1" type="loadcurve">
+         <interpolate>LINEAR</interpolate>
+         <points>
+            <point>0.00000000000000000000,0.00000000000000000000</point>
+            <point>0.10000000000000000555,0.00000000000000000000</point>
+            <point>1.00000000000000000000,0.62289251257902289449</point>
+         </points>
+      </load_controller>
+      <load_controller id="2" type="loadcurve">
+         <interpolate>LINEAR</interpolate>
+         <points>
+            <point>0.00000000000000000000,0.00000000000000000000</point>
+            <point>0.10000000000000000555,0.00000000000000000000</point>
+            <point>1.00000000000000000000,0.00000000000000000000</point>
+         </points>
+      </load_controller>
+   </LoadData>
+   <Output>
+      <plotfile type="febio">
+         <var type="displacement"/>
+         <var type="fiber vector"/>
+         <var type="relative volume"/>
+         <var type="stress"/>
+         <var type="parameter['fem.material[0].solid[1].T0']=T_sphincter"/>
+         <var type="parameter['fem.material[0].solid[2].T0']=T_dialator"/>
+      </plotfile>
+      <logfile>
+         <element_data data="x;y;z;sx;sy;sz;sxy;syz;sxz;Ex;Ey;Ez;Exy;Eyz;Exz"/>
+         <node_data data="x;y;z;ux;uy;uz"/>
+      </logfile>
+   </Output>
+</febio_spec>
