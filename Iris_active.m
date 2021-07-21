@@ -54,7 +54,7 @@ end
 %dimension estimation from literature)
 % test cases are a_s = [.4, .7, 1, 1.3]
 
-fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),  (.7-lb(6))/(ub(6)-lb(6)), 0]; %set the time constat, beta, and dialtor traction to the minimum of lb
+fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),  (1.3-lb(6))/(ub(6)-lb(6)), 0]; %set the time constat, beta, and dialtor traction to the minimum of lb
 
 
 %in the variable names I have kept the usual FEBio units when using mm as dimension, which are based
