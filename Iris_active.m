@@ -14,7 +14,7 @@ fprintf('\nMatlab version \t %s \n\n',version)
 fprintf('Starting iris_active.m ...\n\n') 
 fprintf('%s\n',datetime)
 
-N = 100;
+N = 25;
 DataFit_Output.N = N;
 
 fprintf('Iris_active.m run, with grid size of N = %d \n',N)
@@ -43,16 +43,18 @@ DataFit_Output.Start_date = datetime('now');
 %% Define cost function
 %parameters E (MPa), v, tau (sec), beta, T_sphincter(MPa), a_sphincter(mm) T_dialator(MPa)
 lb    = [0, 0, 1e-10,  2,  0, .1,  0];
-ub    = [.1, .49, 100, 100, .1, 2, .1];
+ub    = [1, .49, 100, 100, 1, 2, 1];
 
 if sum(ub<lb)>0
     error('The bounds do not match')
 end
 
-%set the sphincter width to 1 as trypical value for sphincter (see
+%set the sphincter width (see
 %/home/asixbabak/Dropbox (GaTech)/project-IrisBiomechanics/Iris sphincter
 %dimension estimation from literature)
-fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),  (1-lb(6))/(ub(6)-lb(6)), 0]; %set the time constat, beta, and dialtor traction to the minimum of lb
+% test cases are a_s = [.4, .7, 1, 1.3]
+
+fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),  (.7-lb(6))/(ub(6)-lb(6)), 0]; %set the time constat, beta, and dialtor traction to the minimum of lb
 
 
 %in the variable names I have kept the usual FEBio units when using mm as dimension, which are based
@@ -166,6 +168,7 @@ end
 formatOut = 'mm_dd_yyyy_HH_MM';
 date_marker = datestr(now,formatOut);
 save([sprintf('temp/DataFit_Output_N%d_',N),date_marker,'.mat'],'DataFit_Output')
-diary temp/MatlabDiary.txt
 diary off
+
+move diary temp/MatlabDiary
 end
