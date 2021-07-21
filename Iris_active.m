@@ -162,13 +162,8 @@ DataFit_Output.active_iris = tmp_swap;
 fprintf('%s \n',datetime)
 fprintf('Analyses concluded! \n')
 
-if isfile('temp/MatlabDiary.txt')
-    delete temp/MatlabDiary.txt
-end
 formatOut = 'mm_dd_yyyy_HH_MM';
 date_marker = datestr(now,formatOut);
 save([sprintf('temp/DataFit_Output_N%d_',N),date_marker,'.mat'],'DataFit_Output')
 diary off
-
-move diary temp/MatlabDiary
 end
