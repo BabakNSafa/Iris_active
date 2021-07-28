@@ -11447,4 +11447,556 @@ In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('xml2
 In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('xml2struct', 'C:\Users\bsafa3\Dropbox (GaTech)\project-IrisBiomechanics\FE\Iris_active\xml2struct.m', 57)" style="font-weight:bold">xml2struct</a> (<a href="matlab: opentoline('C:\Users\bsafa3\Dropbox (GaTech)\project-IrisBiomechanics\FE\Iris_active\xml2struct.m',57,0)">line 57</a>)
     s = parseChildNodes(xDoc);
 
-In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('FEBio_run_Iris_Active', 'C:\Users\bsafa3\Dropbox (GaTech)\project-IrisBiomechanics\FE\Iris_active\FEBio_run_Iris_Active.m', 52)" style="font-weight:bold">
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('FEBio_run_Iris_Active', 'C:\Users\bsafa3\Dropbox (GaTech)\project-IrisBiomechanics\FE\Iris_active\FEBio_run_Iris_Active.m', 52)" style="font-weight:bold">Active Iris Curve Fitting
+Written by Babak N. Safa (Ethier Lab)
+
+Matlab version 	 9.9.0.1467703 (R2020b) 
+
+Starting iris_active.m ...
+
+28-Jul-2021 11:47:42
+Iris_active.m run, with grid size of N = 25 
+Optimization started ...
+
+ans =
+
+    'Starting cycle number 1/25'
+
+
+ans =
+
+    'Starting cycle number 2/25'
+
+
+ans =
+
+    'Starting cycle number 3/25'
+
+
+ans =
+
+    'Starting cycle number 4/25'
+
+
+ans =
+
+    'Starting cycle number 5/25'
+
+
+ans =
+
+    'Starting cycle number 6/25'
+
+
+ans =
+
+    'Starting cycle number 7/25'
+
+
+ans =
+
+    'Starting cycle number 8/25'
+
+
+ans =
+
+    'Starting cycle number 9/25'
+
+
+ans =
+
+    'Starting cycle number 10/25'
+
+
+ans =
+
+    'Starting cycle number 11/25'
+
+
+ans =
+
+    'Starting cycle number 12/25'
+
+
+ans =
+
+    'Starting cycle number 13/25'
+
+
+ans =
+
+    'Starting cycle number 14/25'
+
+
+ans =
+
+    'Starting cycle number 15/25'
+
+
+ans =
+
+    'Starting cycle number 16/25'
+
+
+ans =
+
+    'Starting cycle number 17/25'
+
+
+ans =
+
+    'Starting cycle number 18/25'
+
+
+ans =
+
+    'Starting cycle number 19/25'
+
+
+ans =
+
+    'Starting cycle number 20/25'
+
+
+ans =
+
+    'Starting cycle number 21/25'
+
+
+ans =
+
+    'Starting cycle number 22/25'
+
+
+ans =
+
+    'Starting cycle number 23/25'
+
+
+ans =
+
+    'Starting cycle number 25/25'
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    3.791961e-01    0.000e+00    1.551e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    2.951141e-01    0.000e+00    1.019e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    3.685527e-01    0.000e+00    1.795e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    3.201511e-01    0.000e+00    9.463e-02
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    3.675695e-01    0.000e+00    1.300e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    2.371442e-01    0.000e+00    1.314e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    2.407939e-01    0.000e+00    1.345e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    2.684883e-01    0.000e+00    1.051e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    3.057197e-01    0.000e+00    1.439e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    1.670362e-01    0.000e+00    1.437e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    3.481190e-01    0.000e+00    2.047e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    1.944175e-01    0.000e+00    1.659e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    1.036275e-01    0.000e+00    1.064e+00
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    2.483213e-01    0.000e+00    2.267e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    6.901426e-02    0.000e+00    1.582e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    2.197917e-01    0.000e+00    4.871e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    3.448143e-01    0.000e+00    1.271e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    3.568141e-01    0.000e+00    1.195e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    2.078192e-01    0.000e+00    1.483e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    2.362982e-01    0.000e+00    2.954e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    9.733866e-02    0.000e+00    1.502e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    5.341616e-02    0.000e+00    1.585e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    2.622409e-02    0.000e+00    1.686e+00
+    1       8    3.791841e-01    0.000e+00    1.555e-01    2.127e-03
+    1       8    2.667253e-01    0.000e+00    1.237e-01    1.227e-01
+    1       8    3.055501e-01    0.000e+00    7.568e-02    9.128e-02
+    1       8    3.670385e-01    0.000e+00    1.779e-01    1.319e-02
+    1       8    3.659427e-01    0.000e+00    1.235e-01    1.684e-02
+    1       8    3.378519e-01    0.000e+00    1.904e-01    4.914e-02
+    1       8    2.619232e-01    0.000e+00    7.086e-02    4.518e-02
+    1       8    3.454238e-01    0.000e+00    8.481e-02    8.116e-02
+    1       8    1.235132e-01    0.000e+00    4.467e-01    7.300e-01
+    1       8    3.279808e-01    0.000e+00    9.985e-02    1.000e-01
+    1       8    1.628853e-01    0.000e+00    3.449e-01    1.718e-01
+    1       9    2.867178e-02    0.000e+00    1.839e+00    8.558e-02
+    1       8    1.181574e-01    0.000e+00    6.399e-01    1.993e-01
+    1       8    5.493926e-02    0.000e+00    5.191e-01    1.822e-01
+    1       8    8.362421e-02    0.000e+00    1.818e+00    1.763e-01
+    2      12    1.017420e-01    0.000e+00    7.582e-01    6.650e-01
+    1       8    1.227944e-01    0.000e+00    2.789e-01    1.678e-01
+    1      10    4.896215e-02    0.000e+00    5.673e-01    5.655e-02
+    2      12    1.601884e-01    0.000e+00    3.355e-01    5.807e-01
+    1       8    2.201928e-01    0.000e+00    1.243e-01    1.048e-01
+    1       8    1.000772e-01    0.000e+00    4.850e-01    1.920e-01
+    2      12    3.770527e-01    0.000e+00    1.599e-01    3.046e-02
+    2      12    2.879165e-02    0.000e+00    1.635e+00    1.926e-01
+    2      12    2.566399e-01    0.000e+00    1.340e-01    5.388e-01
+    2      12    3.121181e-01    0.000e+00    1.465e-01    3.647e-01
+    1       8    3.751071e-02    0.000e+00    6.422e-01    3.362e-01
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    4.761096e-03    0.000e+00    1.180e-01
+    2      12    1.746598e-01    0.000e+00    3.165e-01    6.328e-01
+    2      12    2.514455e-01    0.000e+00    3.007e-01    4.571e-01
+    1       8    1.579851e-02    0.000e+00    1.474e+00    1.672e-01
+    2      12    6.269447e-02    0.000e+00    1.135e+00    7.382e-01
+    2      14    2.544569e-02    0.000e+00    4.372e-01    1.449e-01
+    2      13    7.468302e-03    0.000e+00    1.887e-01    3.490e-02
+    2      13    4.870774e-02    0.000e+00    1.289e+00    1.094e-01
+    3      16    9.056456e-02    0.000e+00    5.270e-01    2.411e-01
+    2      13    1.975921e-02    0.000e+00    1.682e+00    1.220e-01
+    2      12    1.959556e-01    0.000e+00    2.139e-01    3.464e-01
+    1       8    2.520104e-01    0.000e+00    1.542e-01    1.668e-01
+    3      16    1.973846e-01    0.000e+00    2.299e-01    2.610e-01
+    3      16    7.910936e-02    0.000e+00    5.462e-01    1.480e-01
+    2      13    2.447829e-02    0.000e+00    7.517e-01    1.812e-01
+    3      16    1.121792e-01    0.000e+00    4.683e-01    1.026e-01
+    2      13    2.739267e-02    0.000e+00    1.206e+00    1.414e-01
+    3      16    4.209977e-02    0.000e+00    7.225e-01    7.800e-01
+    1       8    3.929401e-03    0.000e+00    4.476e-01    4.754e-01
+    3      16    1.180062e-01    0.000e+00    4.392e-01    1.353e-01
+    3      17    9.226497e-02    0.000e+00    9.242e-01    2.588e-01
+    2      13    1.106012e-01    0.000e+00    4.602e-01    3.076e-01
+    2      19    4.268514e-02    0.000e+00    1.720e-01    5.559e-02
+    3      18    4.013384e-02    0.000e+00    9.266e-01    9.535e-02
+    3      17    3.072013e-01    0.000e+00    2.939e-01    4.345e-01
+    3      18    1.856145e-02    0.000e+00    1.028e+00    2.739e-02
+    3      19    2.245659e-02    0.000e+00    1.309e+00    4.494e-02
+    2      12    2.209381e-02    0.000e+00    1.174e+00    5.108e-02
+    4      20    5.698341e-02    0.000e+00    5.459e-01    5.976e-02
+    2      13    7.087927e-02    0.000e+00    7.513e-01    3.128e-01
+    3      18    6.870555e-03    0.000e+00    7.399e-01    3.479e-02
+    4      22    3.799819e-02    0.000e+00    1.380e+00    1.289e-01
+    3      17    1.770022e-03    0.000e+00    6.760e-01    5.040e-02
+    4      20    1.237907e-02    0.000e+00    7.608e-01    1.112e-01
+    4      22    7.548322e-03    0.000e+00    5.559e-01    1.179e-01
+    3      17    7.810649e-02    0.000e+00    5.673e-01    2.872e-01
+    4      20    1.963559e-02    0.000e+00    8.292e-01    2.108e-01
+    4      21    6.028119e-03    0.000e+00    4.068e-01    1.768e-01
+    3      23    1.624180e-02    0.000e+00    1.540e-01    5.242e-02
+    4      20    1.419594e-02    0.000e+00    7.612e-01    3.541e-02
+    4      22    1.966777e-01    0.000e+00    7.543e-01    2.110e-01
+    2      15    1.366014e-03    0.000e+00    5.870e-01    5.550e-02
+    3      18    5.428763e-02    0.000e+00    1.172e+00    1.412e-01
+    4      20    1.455027e-01    0.000e+00    3.746e-01    1.633e-01
+    5      26    3.351444e-02    0.000e+00    1.068e+00    5.834e-02
+    4      23    1.100546e-03    0.000e+00    8.013e-01    2.227e-02
+    3      23    5.033859e-03    0.000e+00    1.346e-01    2.348e-02
+    5      27    7.848588e-03    0.000e+00    7.084e-01    2.400e-02
+    5      25    1.327177e-02    0.000e+00    5.751e-01    3.967e-02
+    3      18    3.290624e-04    0.000e+00    3.286e-01    1.194e-01
+    5      26    6.234220e-03    0.000e+00    7.467e-01    3.242e-02
+    5      27    6.285196e-03    0.000e+00    8.715e-01    2.419e-02
+    5      28    1.584301e-03    0.000e+00    7.805e-01    9.208e-03
+    4      22    3.220848e-02    0.000e+00    9.321e-01    1.442e-01
+    6      31    1.492732e-03    0.000e+00    8.500e-01    1.526e-02
+    4      22    1.036051e-03    0.000e+00    1.055e+00    2.282e-02
+    4      22    2.792572e-03    0.000e+00    8.611e-01    5.451e-02
+    5      27    5.600390e-02    0.000e+00    1.746e+00    1.060e-01
+    6      30    6.173790e-03    0.000e+00    4.475e-01    1.670e-02
+    5      27    1.895177e-04    0.000e+00    9.788e-01    3.728e-02
+    6      31    1.202285e-04    0.000e+00    8.012e-01    1.903e-02
+    5      27    3.386778e-03    0.000e+00    7.810e-01    4.076e-02
+    6      32    5.373885e-02    0.000e+00    2.241e+00    5.352e-02
+    5      25    2.079495e-02    0.000e+00    7.299e-01    2.180e-01
+    6      30    3.140836e-03    0.000e+00    1.137e+00    3.986e-02
+    6      32    9.612895e-04    0.000e+00    3.968e-01    1.189e-02
+    7      36    3.219873e-03    0.000e+00    1.347e+00    2.090e-01
+    6      39    1.034791e-04    0.000e+00    1.580e-01    6.055e-03
+    7      34    5.931185e-03    0.000e+00    3.338e-01    7.702e-02
+    7      38    1.852223e-03    0.000e+00    5.196e-01    4.304e-02
+    8      46    5.505470e-03    0.000e+00    1.862e-01    5.602e-02
+    9      51    5.553331e-03    0.000e+00    1.853e-01    8.331e-02
+   10      59    4.737620e-03    0.000e+00    1.760e-01    2.453e-01
+    1      17    6.456773e-04    0.000e+00    1.726e-01    5.779e-03
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 14 ended in 0.908 hours
+    3      18    1.176374e-03    0.000e+00    3.896e-01    1.179e-02
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+    2      13    2.726889e-03    0.000e+00    3.423e-01    1.815e-01
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 5 ended in 0.949 hours
+   11      68    8.307659e-04    0.000e+00    7.966e-02    1.861e-01
+Optimization for cycle 10 ended in 0.960 hours
+    3      18    4.306379e-03    0.000e+00    2.691e-01    1.543e-01
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+    4      24    1.117391e-03    0.000e+00    4.591e-01    3.222e-03
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 7 ended in 0.982 hours
+Optimization for cycle 19 ended in 0.983 hours
+    2      20    3.119197e-04    0.000e+00    1.354e-01    4.988e-03
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 16 ended in 0.994 hours
+    4      30    4.575133e-03    0.000e+00    3.646e-01    2.089e-02
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+    4      28    1.065778e-03    0.000e+00    3.339e-01    1.062e-02
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 6 ended in 1.013 hours
+Optimization for cycle 20 ended in 1.015 hours
+    4      23    1.161337e-03    0.000e+00    5.193e-01    8.975e-03
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+    5      29    6.717932e-04    0.000e+00    6.861e-01    1.183e-02
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+    3      28    1.326945e-04    0.000e+00    1.587e-01    2.379e-03
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 15 ended in 1.040 hours
+Optimization for cycle 21 ended in 1.041 hours
+Optimization for cycle 13 ended in 1.042 hours
+    4      31    5.054253e-05    0.000e+00    1.418e-01    2.312e-03
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 2 ended in 1.050 hours
+    5      34    7.882679e-04    0.000e+00    1.819e-01    1.485e-03
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 3 ended in 1.060 hours
+    7      36    1.125121e-03    0.000e+00    6.521e-01    2.466e-02
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 4 ended in 1.068 hours
+    5      29    6.738409e-04    0.000e+00    7.306e-01    4.116e-03
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+    7      42    5.901207e-04    0.000e+00    1.793e-01    3.392e-03
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 8 ended in 1.073 hours
+Optimization for cycle 11 ended in 1.078 hours
+    6      33    7.229047e-04    0.000e+00    6.464e-01    5.305e-03
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+    6      32    7.115432e-04    0.000e+00    6.329e-01    2.738e-02
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 22 ended in 1.089 hours
+Optimization for cycle 9 ended in 1.091 hours
+    7      52    3.773787e-05    0.000e+00    1.775e-01    1.528e-04
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+    6      33    1.158165e-03    0.000e+00    5.688e-01    8.258e-03
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+    7      44    8.728558e-04    0.000e+00    1.423e-01    2.868e-03
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+    8      42    6.843639e-04    0.000e+00    1.202e+00    1.056e-02
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 23 ended in 1.096 hours
+Optimization for cycle 1 ended in 1.099 hours
+Optimization for cycle 18 ended in 1.099 hours
+Optimization for cycle 17 ended in 1.100 hours
+    8      49    1.629018e-04    0.000e+00    1.635e-01    1.700e-01
+
+Feasible point with lower objective function value found.
+
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 12 ended in 1.130 hours
+   12      78    6.507465e-04    0.000e+00    1.217e-01    3.752e-02
+   13     134    6.507465e-04    0.000e+00    1.217e-01    1.143e-16
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 25 ended in 1.269 hours
+
+ans =
+
+    'Starting cycle number 24/25'
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       4    3.191461e-01    0.000e+00    6.710e-02
+    1       8    3.098805e-01    0.000e+00    5.312e-02    6.935e-02
+    2      12    2.486340e-01    0.000e+00    1.245e-01    3.659e-01
+    3      16    1.993288e-01    0.000e+00    2.167e-01    2.004e-01
+    4      20    7.958016e-02    0.000e+00    5.664e-01    3.034e-01
+    5      25    3.231636e-02    0.000e+00    8.679e-01    1.497e-01
+    6      30    4.364293e-03    0.000e+00    7.832e-01    4.380e-02
+    7      35    4.217863e-03    0.000e+00    3.241e-01    1.088e-02
+    8      46    3.934010e-03    0.000e+00    1.538e-01    1.580e-02
+    9      89    3.934010e-03    0.000e+00    1.538e-01    9.185e-13
+   10      94    3.934010e-03    0.000e+00    1.538e-01    3.597e-13
+   11     106    3.934010e-03    0.000e+00    1.538e-01    1.148e-13
+   12     111    3.934010e-03    0.000e+00    1.538e-01    4.496e-14
+   13     121    3.934010e-03    0.000e+00    1.538e-01    5.741e-14
+   14     127    3.934010e-03    0.000e+00    1.538e-01    1.124e-14
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
+
+Optimization for cycle 24 ended in 0.494 hours
+28-Jul-2021 13:34:33 
+Analyses concluded! 
