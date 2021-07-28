@@ -2,6 +2,7 @@ function Iris_active()
 %% Initialize
 clc
 close all
+warning off
 parpool('local',24)
 
 if ~isfolder('temp')
@@ -41,9 +42,9 @@ DataFit_Output.Start_date = datetime('now');
     plot(time,e_r_p,'o')
     plot(time(index),e_r_p(index),'-*r')
 %% Define cost function
-%parameters E (MPa), v, tau (sec), beta, T_sphincter(MPa), a_sphincter(mm) T_dialator(MPa)
-lb    = [0, 0, 1e-10,  2,  0, .1,  0];
-ub    = [1, .49, 100, 100, 1, 2, 1];
+%parameters E (MPa), v, T_sphincter(MPa), a_sphincter(mm)
+lb    = [0, 0,   0, .1 ];
+ub    = [1, .49, 1, 2];
 
 if sum(ub<lb)>0
     error('The bounds do not match')
@@ -54,12 +55,12 @@ end
 %dimension estimation from literature)
 % test cases are a_s = [.4, .7, 1, 1.3]
 
-fun_par_normal = @(x) [x(1),   x(2),   0,  0,  x(3),  (1.3-lb(6))/(ub(6)-lb(6)), 0]; %set the time constat, beta, and dialtor traction to the minimum of lb
+fun_par_normal = @(x) [x(1),   x(2),   x(3),  (1-lb(4))/(ub(4)-lb(4))]; %set the function to assign sphincter width
 
 
 %in the variable names I have kept the usual FEBio units when using mm as dimension, which are based
 %on mm, MPa and sec
-DataFit_Output.par_name       = {'E (MPa)','\nu','\tau (sec)','\beta','T_sphincter(MPa)', 'a_sphincter (mm)', 'T_diallator(MPa)'};
+DataFit_Output.par_name       = {'E (MPa)','\nu','T_sphincter(MPa)', 'a_sphincter (mm)'};
 DataFit_Output.lb = lb;
 DataFit_Output.ub = ub;
 
@@ -67,29 +68,28 @@ DataFit_Output.ub = ub;
     %% parameters for testing
 E_test      = .01;% in MPa, which is equivalent of 10 kPa
 v_test      = 0.4;
-tau_test    = 100;%in sec
-beta_test   = 2; 
 T_s_test    = .01;% in MPa, which is equivalent of 10 kPa
 a_s_test    = 1;% in mm
-T_d_test    = .02;% in MPa, which is equivalent of 20 kPa
 
-x_test = [E_test, v_test, tau_test, beta_test T_s_test, a_s_test, T_d_test];
+r_p = 3.4; %pupil radius
+
+x_test = [E_test, v_test, T_s_test, a_s_test];
 temp = (x_test-lb)./(ub-lb);
-x_test_normal = fun_par_normal(temp([1,2,5])); 
+x_test_normal = fun_par_normal(temp([1,2,3])); 
 cleanup = true;
-[e_r_test1, ~, detail] = FEBio_run_Iris_Active(x_test_normal,lb,ub,load,step_size,cleanup);
+[e_r_test1, ~, detail] = FEBio_run_Iris_Active(x_test_normal,lb,ub,r_p,load,step_size,cleanup);
 rho = detail.rho;
 
     %% Definitions go in here
 cleanup = true;
 
 %Fit only maximum constriction pupil strain
-fun = @(x) sqrt((min(FEBio_run_Iris_Active(fun_par_normal(x),lb,ub,...
+fun = @(x) sqrt((min(FEBio_run_Iris_Active(fun_par_normal(x),lb,ub,r_p,...
     load,step_size,cleanup))-e_r_p_max_0).^2);
 
     %% run tests
 test1 = sqrt(sum((min(e_r_test1)-e_r_p_max_0).^2)/length(e_r_p_max_0));
-test2 = fun(x_test_normal([1,2,5]));
+test2 = fun(x_test_normal([1,2,3]));
 
 if isempty(test1)||isempty(test2)||abs(test1-test2)>1e-12
     error('FEBio test failed!')
@@ -106,7 +106,7 @@ options = optimoptions(@fmincon,'Algorithm','interior-point',...
                       'Display','Iter','DiffMinChange',.01,...
                       'ObjectiveLimit',1e-5,'StepTolerance',1e-20);
 
-tmp_swap=[];
+tmp_swap=struct([]);
 fprintf('Optimization started ...\n')
 
 parfor i=1:N
@@ -121,7 +121,7 @@ parfor i=1:N
     fprintf('Optimization for cycle %d ended in %.3f hours\n',[i, t_elapsed/3600])
     %% Evaluate the fit response
     cleanup     = false;
-    [e_r_p_max_fit, ~, detail] = FEBio_run_Iris_Active(fun_par_normal(x_fit),lb,ub,...
+    [e_r_p_max_fit, ~, detail] = FEBio_run_Iris_Active(fun_par_normal(x_fit),lb,ub,r_p,...
                         load,step_size,cleanup);
 
     RMSE_e_r    = fval;
