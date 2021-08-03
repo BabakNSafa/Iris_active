@@ -55,7 +55,7 @@ end
 %dimension estimation from literature)
 % test cases are a_s = [.4, .7, 1, 1.3]
 
-fun_par_normal = @(x) [x(1),   x(2),   x(3),  (1-lb(4))/(ub(4)-lb(4))]; %set the function to assign sphincter width
+fun_par_normal = @(x) [x(1),   x(2),   x(3),  (.4-lb(4))/(ub(4)-lb(4))]; %set the function to assign sphincter width
 
 
 %in the variable names I have kept the usual FEBio units when using mm as dimension, which are based
