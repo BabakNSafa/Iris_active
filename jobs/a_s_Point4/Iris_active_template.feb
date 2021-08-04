@@ -15143,7 +15143,7 @@
 			<dofs>x</dofs>
 		</bc>
 		<bc name="FixedDisplacement4" type="fix" node_set="@surface:FixedDisplacement4">
-			<dofs>y,z</dofs>
+			<dofs>x,y</dofs>
 		</bc>
 	</Boundary>
 	<LoadData>
